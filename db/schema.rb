@@ -45,13 +45,13 @@ ActiveRecord::Schema.define(version: 20170731174502) do
     t.string "barn_name", null: false
     t.string "breed", null: false
     t.string "disipline"
-    t.bigint "trainer_id_id"
-    t.bigint "owner_id_id"
-    t.bigint "veterinarian_id"
-    t.bigint "farrier_id"
+    t.bigint "trainer_id", null: false
+    t.bigint "owner_id", null: false
+    t.bigint "veterinarian_id", null: false
+    t.bigint "farrier_id", null: false
     t.index ["farrier_id"], name: "index_horses_on_farrier_id"
-    t.index ["owner_id_id"], name: "index_horses_on_owner_id_id"
-    t.index ["trainer_id_id"], name: "index_horses_on_trainer_id_id"
+    t.index ["owner_id"], name: "index_horses_on_owner_id"
+    t.index ["trainer_id"], name: "index_horses_on_trainer_id"
     t.index ["veterinarian_id"], name: "index_horses_on_veterinarian_id"
   end
 
