@@ -1,5 +1,5 @@
 class Farrier < ApplicationRecord
-  belongs_to :horse
+  has_many :horses
 
   validates :name, presence: true
   validates :phone_number, presence: true, numericality: true
