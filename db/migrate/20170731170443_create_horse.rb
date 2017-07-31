@@ -7,10 +7,10 @@ class CreateHorse < ActiveRecord::Migration[5.1]
       t.string :breed, null: false
       t.string :disipline
 
-      t.belongs_to :trainer_id
-      t.belongs_to :owner_id
-      t.belongs_to :veterinarian
-      t.belongs_to :farrier
+      t.belongs_to :trainer, null: false
+      t.belongs_to :owner, null: false
+      t.belongs_to :veterinarian, null: false
+      t.belongs_to :farrier, null: false
     end
   end
 end

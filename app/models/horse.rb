@@ -1,6 +1,6 @@
 class Horse < ApplicationRecord
-  belongs_to :trainer_id, :class_name => 'User'
-  belongs_to :owner_id, :class_name => 'User'
+  belongs_to :trainer, class_name: 'User'
+  belongs_to :owner, class_name: 'User'
   belongs_to :veterinarian
   belongs_to :farrier
 
@@ -11,5 +11,8 @@ class Horse < ApplicationRecord
   validates :registered_name, uniqueness: true
   validates :barn_name, presence: true
   validates :breed, presence: true
-
+  validates :trainer_id, presence: true
+  validates :owner_id, presence: true
+  validates :veterinarian_id, presence: true
+  validates :farrier_id, presence: true
 end

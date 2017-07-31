@@ -60,8 +60,8 @@ Horse.create(
   barn_name: 'Kas',
   breed: "Arabian",
   disipline: 'Hunt/Western',
-  trainer_id_id: 1,
-  owner_id_id: 2,
+  trainer_id: 1,
+  owner_id: 2,
   veterinarian_id: 1,
   farrier_id: 1
 )
@@ -71,8 +71,8 @@ Horse.create(
   barn_name: 'Taco',
   breed: "Quarter Horse",
   disipline: 'Cutting',
-  trainer_id_id: 1,
-  owner_id_id: 3,
+  trainer_id: 1,
+  owner_id: 3,
   veterinarian_id: 1,
   farrier_id: 1
 )
@@ -82,8 +82,8 @@ Horse.create(
   barn_name: 'Smokey',
   breed: "Quarter Horse",
   disipline: 'Reining',
-  trainer_id_id: 1,
-  owner_id_id: 1,
+  trainer_id: 1,
+  owner_id: 1,
   veterinarian_id: 1,
   farrier_id: 1
 )
