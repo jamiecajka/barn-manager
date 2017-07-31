@@ -31,14 +31,12 @@ ActiveRecord::Schema.define(version: 20170731174502) do
   end
 
   create_table "farriers", force: :cascade do |t|
-    t.bigint "horse_id"
     t.string "name", null: false
     t.string "phone_number", null: false
     t.string "address", null: false
     t.string "city", null: false
     t.string "state", null: false
     t.string "zip_code", null: false
-    t.index ["horse_id"], name: "index_farriers_on_horse_id"
   end
 
   create_table "horses", force: :cascade do |t|
@@ -49,8 +47,12 @@ ActiveRecord::Schema.define(version: 20170731174502) do
     t.string "disipline"
     t.bigint "trainer_id_id"
     t.bigint "owner_id_id"
+    t.bigint "veterinarian_id"
+    t.bigint "farrier_id"
+    t.index ["farrier_id"], name: "index_horses_on_farrier_id"
     t.index ["owner_id_id"], name: "index_horses_on_owner_id_id"
     t.index ["trainer_id_id"], name: "index_horses_on_trainer_id_id"
+    t.index ["veterinarian_id"], name: "index_horses_on_veterinarian_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -65,14 +67,12 @@ ActiveRecord::Schema.define(version: 20170731174502) do
   end
 
   create_table "veterinarians", force: :cascade do |t|
-    t.bigint "horse_id"
     t.string "name", null: false
     t.string "phone_number", null: false
     t.string "address", null: false
     t.string "city", null: false
     t.string "state", null: false
     t.string "zip_code", null: false
-    t.index ["horse_id"], name: "index_veterinarians_on_horse_id"
   end
 
 end

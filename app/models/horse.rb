@@ -1,10 +1,11 @@
 class Horse < ApplicationRecord
   belongs_to :trainer_id, :class_name => 'User'
   belongs_to :owner_id, :class_name => 'User'
+  belongs_to :veterinarian
+  belongs_to :farrier
+
   has_many :users
   has_many :charges
-  has_one :veterinarian
-  has_one :farrier
   has_many :events
 
   validates :registered_name, uniqueness: true

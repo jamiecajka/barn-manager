@@ -9,6 +9,8 @@ class CreateHorse < ActiveRecord::Migration[5.1]
 
       t.belongs_to :trainer_id
       t.belongs_to :owner_id
+      t.belongs_to :veterinarian
+      t.belongs_to :farrier
     end
   end
 end
