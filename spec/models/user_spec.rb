@@ -11,13 +11,14 @@ describe User do
   it { should have_valid(:trainer).when(true) }
 
   it { should_not have_valid(:name).when(nil, '') }
-  it { should_not have_valid(:email).when(nil, '') }
+  it { should_not have_valid(:email).when(nil, '', 'user', 'user.com', 'user@email') }
   it { should_not have_valid(:phone_number).when(nil, '') }
   it { should_not have_valid(:address).when(nil, '') }
   it { should_not have_valid(:city).when(nil, '') }
   it { should_not have_valid(:state).when(nil, '') }
   it { should_not have_valid(:zip_code).when(nil, '') }
   it { should_not have_valid(:trainer).when(false) }
+
 end
 
 RSpec.describe User do
@@ -55,5 +56,14 @@ RSpec.describe User do
     it 'has a valid trainer value' do
       expect(user.trainer).to eq(true)
     end
+  end
+  
+  it 'has a matching password confirmation for the password' do
+    user = User.new
+    user.password = 'password'
+    user.password_confirmation = 'anotherpassword'
+
+    expect(user).to_not be_valid
+    expect(user.errors[:password_confirmation]).to_not be_blank
   end
 end
