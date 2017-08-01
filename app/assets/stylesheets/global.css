@@ -1,3 +1,30 @@
 body{
-  background: #789048;
+  background: #789048 !important;
+}
+
+img{
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+.header{
+  background: #474747;
+  height: 100px;
+  text-align: center;
+}
+.barn_name{
+  color: white;
+}
+.card{
+  padding-top: 20px;
+  width: 300px;
+  background: #474747;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.sign_in{
+  padding: 5px;
+}
+
+.sign_up{
+  padding: 5px;
 }
