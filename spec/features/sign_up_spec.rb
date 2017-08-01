@@ -18,8 +18,10 @@ feature "sign up" do
     fill_in 'Password Confirmation', with: 'password'
     click_button 'Sign Up'
 
+    expect(page).to have_content("Account was successfully created")
     expect(page).to have_content("Sign Out")
   end
+
   scenario 'required information is not supplied' do
     visit root_path
     click_link 'Sign Up'
