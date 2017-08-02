@@ -1,0 +1,10 @@
+<div>
+  <h1><%= @horse.registered_name %></h1>
+  <h2><%= @horse.barn_name %></h2>
+  <p> <%= image_tag @horse.picture %> </p>
+  <h5> <%= @horse.user.name %></h5>
+  <h5> <%= @horse.breed %></h5>
+  <h5> <%= @horse.disipline %></h5>
+  <p><%= @horse.veterinarian.name %></p>
+  <p><%= @horse.farrier.name %></p>
+</div>

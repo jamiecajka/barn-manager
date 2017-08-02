@@ -14,10 +14,6 @@
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, label: 'Password Confirmation', required: true %>
   </div>
-  <div class='form-inputs'>
-    <%= f.label :trainer, 'Owner or Trainer' %><br />
-    <%= f.select :trainer, [['Owner', false], ['Trainer', true]], required: true %>
-  </div>
 
   <div class="form-actions">
     <%= f.button :submit, "Sign Up" %>

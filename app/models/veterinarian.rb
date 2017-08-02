@@ -1,5 +1,5 @@
 class Veterinarian < ApplicationRecord
-  has_many :horse
+  has_many :horses
 
   validates :name, presence: true
   validates :phone_number, presence: true
