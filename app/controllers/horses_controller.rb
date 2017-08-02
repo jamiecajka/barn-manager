@@ -25,14 +25,14 @@ class HorsesController < ApplicationController
 
   def horse_params
     params.require(:horse).permit(
-    :registered_name,
-    :barn_name,
-    :breed,
-    :disipline,
-    :user_id,
-    :veterinarian_id,
-    :farrier_id,
-    :picture
-    )
+      :registered_name,
+      :barn_name,
+      :breed,
+      :disipline,
+      :user_id,
+      :veterinarian_id,
+      :farrier_id,
+      :picture
+      )
   end
 end

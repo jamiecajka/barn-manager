@@ -4,8 +4,7 @@ class Horse < ApplicationRecord
   belongs_to :farrier
 
   has_many :charges
-  has_many :events
-  
+  has_many :events  
   mount_uploader :picture, PictureUploader
 
   validates :registered_name, uniqueness: true
