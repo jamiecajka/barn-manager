@@ -9,6 +9,5 @@ FactoryGirl.define do
       zip_code '68506'
       password 'password'
       password_confirmation 'password'
-      trainer true
     end
   end

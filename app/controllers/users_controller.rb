@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @horses = @user.horses
-    @charges = @horses.charges
-    @events = @horses.events
+    # @horse = Horse.find(params[:owner])
+    # @charges = @horses.charges
+    # @events = @horses.events
   end
 
   def new
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = 'Account was successfully created'
-      redirect_to @user
+      redirect_to user_path
     else
       render :new
     end
@@ -27,5 +27,9 @@ class UsersController < ApplicationController
       flash[:notice] = 'User has been deleted.'
       redirect_to new_user_path
     end
+  end
+
+  def after_sign_in_path_for(resource)
+    @user = user_path(current_user)
   end
 end

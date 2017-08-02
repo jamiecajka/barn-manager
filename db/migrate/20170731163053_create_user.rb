@@ -7,7 +7,6 @@ class CreateUser < ActiveRecord::Migration[5.1]
       t.string :city, null: false
       t.string :state, null: false
       t.string :zip_code, null: false
-      t.boolean :trainer, null: false
 
     end
   end

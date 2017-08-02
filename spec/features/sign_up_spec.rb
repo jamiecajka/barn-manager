@@ -13,7 +13,6 @@ feature "sign up" do
     fill_in 'City', with: 'Lincoln'
     fill_in 'State', with: 'Nebraska'
     fill_in 'Zip Code', with: '68506'
-    select 'Trainer', from: 'Owner or Trainer'
     fill_in 'user_password', with: 'password'
     fill_in 'Password Confirmation', with: 'password'
     click_button 'Sign Up'

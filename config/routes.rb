@@ -6,8 +6,8 @@ Rails.application.routes.draw do
     resources :events, except: [:index, :show]
   end
 
-  resources :horses, only: [:show] do
-    resources :users, only: [:index]
+  resources :horses do
+    resources :users, only: [:show]
     resources :charges, except: [:index, :show]
     resources :events, except: [:index, :show]
     resources :veternarians, except: [:index]

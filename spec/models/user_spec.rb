@@ -8,7 +8,6 @@ describe User do
   it { should have_valid(:city).when('city') }
   it { should have_valid(:state).when('state') }
   it { should have_valid(:zip_code).when('68506') }
-  it { should have_valid(:trainer).when(true) }
 
   it { should_not have_valid(:name).when(nil, '') }
   it { should_not have_valid(:email).when(nil, '', 'user', 'user.com', 'user@email') }
@@ -17,13 +16,12 @@ describe User do
   it { should_not have_valid(:city).when(nil, '') }
   it { should_not have_valid(:state).when(nil, '') }
   it { should_not have_valid(:zip_code).when(nil, '') }
-  it { should_not have_valid(:trainer).when(false) }
 
 end
 
 RSpec.describe User do
   context 'making a new user' do
-    let(:user) {User.new(name: 'John Doe', email: 'email@email.com', phone_number: '123-456-7890', address: '123 Main St', city: 'Lincoln', state: 'Nebraska', zip_code: '68506', trainer: true)}
+    let(:user) {User.new(name: 'John Doe', email: 'email@email.com', phone_number: '123-456-7890', address: '123 Main St', city: 'Lincoln', state: 'Nebraska', zip_code: '68506')}
 
     it 'has a name' do
       expect(user.name).to include('John Doe')
@@ -52,12 +50,8 @@ RSpec.describe User do
     it 'has a zip_code' do
       expect(user.zip_code).to include('68506')
     end
-
-    it 'has a valid trainer value' do
-      expect(user.trainer).to eq(true)
-    end
   end
-  
+
   it 'has a matching password confirmation for the password' do
     user = User.new
     user.password = 'password'

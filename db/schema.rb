@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170801154933) do
+ActiveRecord::Schema.define(version: 20170802215752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,18 +40,16 @@ ActiveRecord::Schema.define(version: 20170801154933) do
   end
 
   create_table "horses", force: :cascade do |t|
-    t.string "picture"
     t.string "registered_name"
     t.string "barn_name", null: false
     t.string "breed", null: false
     t.string "disipline"
-    t.bigint "trainer_id", null: false
-    t.bigint "owner_id", null: false
+    t.bigint "user_id", null: false
     t.bigint "veterinarian_id", null: false
     t.bigint "farrier_id", null: false
+    t.string "picture"
     t.index ["farrier_id"], name: "index_horses_on_farrier_id"
-    t.index ["owner_id"], name: "index_horses_on_owner_id"
-    t.index ["trainer_id"], name: "index_horses_on_trainer_id"
+    t.index ["user_id"], name: "index_horses_on_user_id"
     t.index ["veterinarian_id"], name: "index_horses_on_veterinarian_id"
   end
 
@@ -62,7 +60,6 @@ ActiveRecord::Schema.define(version: 20170801154933) do
     t.string "city", null: false
     t.string "state", null: false
     t.string "zip_code", null: false
-    t.boolean "trainer", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
