@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20170802215752) do
     t.string "registered_name"
     t.string "barn_name", null: false
     t.string "breed", null: false
-    t.string "disipline"
+    t.string "discipline"
     t.bigint "user_id", null: false
     t.bigint "veterinarian_id", null: false
     t.bigint "farrier_id", null: false

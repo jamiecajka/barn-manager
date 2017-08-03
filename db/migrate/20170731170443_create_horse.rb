@@ -4,7 +4,7 @@ class CreateHorse < ActiveRecord::Migration[5.1]
       t.string :registered_name
       t.string :barn_name, null: false
       t.string :breed, null: false
-      t.string :disipline
+      t.string :discipline
 
       t.belongs_to :user, null: false
       t.belongs_to :veterinarian, null: false

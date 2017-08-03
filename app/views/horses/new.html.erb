@@ -16,7 +16,7 @@
   <%= f.input :registered_name, label: 'Registered Name' %>
   <%= f.input :barn_name, label: 'Barn Name', required: true %>
   <%= f.input :breed, label: 'Breed', required: true %>
-  <%= f.input :disipline, label: 'Disipline' %>
+  <%= f.input :discipline, label: 'Discipline' %>
   <%= f.label :user_id, 'Owner' %>
   <%= f.select :user_id, User.all.collect { |p| [p.name, p.id] } %>
   <%= f.label :veterinarian_id, 'Veterinarian' %>

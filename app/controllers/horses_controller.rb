@@ -4,6 +4,8 @@ class HorsesController < ApplicationController
     @user = @horse.user
     @veterinarian = @horse.veterinarian
     @farriers = @horse.farrier
+    @charges = Charge.all
+    @events = Event.all
   end
 
   def new
@@ -14,7 +16,7 @@ class HorsesController < ApplicationController
     @horse = Horse.new(horse_params)
     if @horse.save
       flash[:notice] = "New Horse Added!"
-      redirect_to horse_path
+      redirect_to @horse
     else
       flash[:alert] = "New Horse Not Created"
       render :new
@@ -28,11 +30,11 @@ class HorsesController < ApplicationController
       :registered_name,
       :barn_name,
       :breed,
-      :disipline,
+      :discipline,
       :user_id,
       :veterinarian_id,
       :farrier_id,
       :picture
-      )
+    )
   end
 end
