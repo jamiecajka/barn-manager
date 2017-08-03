@@ -16,7 +16,7 @@ feature 'add horse' do
     select 'Dan Fischer', from: 'Veterinarian'
     select 'Vernon Johns', from: "Farrier"
     attach_file 'horse_picture', "#{Rails.root}/spec/support/images/photo.jpg"
-    click_button 'Submit'
+    click_on 'Submit'
 
     expect(page).to have_content('New Horse Added!')
   end
