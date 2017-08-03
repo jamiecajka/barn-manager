@@ -1,4 +1,4 @@
-<h1>Add New Horse</h2>
+<h1 class="form_header">Add New Horse</h1>
 <%= simple_form_for @horse do |f| %>
 <% if @horse.errors.any? %>
 <div id="error_explanation-horse">
@@ -12,20 +12,24 @@
       </div>
     <% end %>
 <div class="row">
-
-  <%= f.input :registered_name, label: 'Registered Name' %>
-  <%= f.input :barn_name, label: 'Barn Name', required: true %>
-  <%= f.input :breed, label: 'Breed', required: true %>
-  <%= f.input :discipline, label: 'Discipline' %>
-  <%= f.label :user_id, 'Owner' %>
-  <%= f.select :user_id, User.all.collect { |p| [p.name, p.id] } %>
-  <%= f.label :veterinarian_id, 'Veterinarian' %>
-  <%= f.select :veterinarian_id, Veterinarian.all.collect { |v| [v.name, v.id] } %>
-  <%= f.label :farrier_id, 'Farrier' %>
-  <%= f.select :farrier_id, Farrier.all.collect { |f| [f.name, f.id] } %>
-  <%= f.input :picture, type: :file %>
+  <div class="small-6 large-centered columns">
+    <div class="form-inputs">
+      <%= f.input :registered_name, label: 'Registered Name' %>
+      <%= f.input :barn_name, label: 'Barn Name', required: true %>
+      <%= f.input :breed, label: 'Breed', required: true %>
+      <%= f.input :discipline, label: 'Discipline' %>
+      <%= f.label :user_id, 'Owner' %>
+      <%= f.select :user_id, User.all.collect { |p| [p.name, p.id] } %>
+      <%= f.label :veterinarian_id, 'Veterinarian' %>
+      <%= f.select :veterinarian_id, Veterinarian.all.collect { |v| [v.name, v.id] } %>
+      <%= f.label :farrier_id, 'Farrier' %>
+      <%= f.select :farrier_id, Farrier.all.collect { |f| [f.name, f.id] } %>
+      <%= f.input :picture, type: :file %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, 'Add Horse' %>
+      <p><%= link_to "Back", :back, class: 'link' %></p>
+    </div>
+    <% end %>
+  </div>
 </div>
-<div class="form-actions">
-  <%= f.submit 'Submit', class: 'button' %>
-</div>
-<% end %>

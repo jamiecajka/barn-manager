@@ -1,44 +1,46 @@
-<div class="row">
-  <div class="small-6 columns">
-    <h1 class="picture"> <%= image_tag @horse.picture %> </h1>
-  </div>
-  <br></br>
-  <br></br>
+<% if user_signed_in? %>
+  <div class="row">
     <div class="small-6 columns">
-      <div class='info_tile' >
-        <br></br>
-        <h1 class='registered_name'><%= @horse.registered_name %></h1>
-        <h1 class='horse_name'><%= @horse.barn_name %></h1>
-        <h5 class='user_name'> Owner: <%= @horse.user.name %></h5>
-        <div class="list_items">
-        <p>Breed: <%= @horse.breed %></p>
-        <p>Discipline: <%= @horse.discipline %></p>
-        <p>Veterinarian: <%= @horse.veterinarian.name %></p>
-        <p>Farrier: <%= @horse.farrier.name %></p>
+      <h1 class="picture"> <%= image_tag @horse.picture %> </h1>
+    </div>
+    <br></br>
+    <br></br>
+      <div class="small-6 columns">
+        <div class='info_tile' >
+          <br></br>
+          <h1 class='registered_name'><%= @horse.registered_name %></h1>
+          <h1 class='horse_name'><%= @horse.barn_name %></h1>
+          <h5 class='user_name'> Owner: <%= @horse.user.name %></h5>
+          <div class="list_items">
+          <p>Breed: <%= @horse.breed %></p>
+          <p>Discipline: <%= @horse.discipline %></p>
+          <p>Veterinarian: <%= @horse.veterinarian.name %></p>
+          <p>Farrier: <%= @horse.farrier.name %></p>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<br></br>
-<br></br>
-<div class="row">
-  <div class="small-6 columns">
-    <div class='charges' { display: inline }>
-      <h3 class='charges_head'>Charges</h3>
-      <% @charges.each do |c| %>
-        <% if c.horse.id === @horse.id %>
-          <p><%= c.date %> <%= c.description %>: $<%= c.amount %></p>
+  <br></br>
+  <br></br>
+  <div class="row">
+    <div class="small-6 columns">
+      <div class='charges' { display: inline }>
+        <h3 class='charges_head'>Charges</h3>
+        <% @charges.each do |c| %>
+          <% if c.horse.id === @horse.id %>
+            <p><%= c.date %> <%= c.description %>: $<%= c.amount %></p>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
-  </div>
-  <div class="small-6 columns">
-    <div class='events' { display: inline }>
-      <h3 class='events_head'>Events</h3>
-      <% @events.each do |e| %>
-        <% if e.horse.id === @horse.id %>
-          <p><%= e.date %> <%= e.description %></p>
+    <div class="small-6 columns">
+      <div class='events' { display: inline }>
+        <h3 class='events_head'>Events</h3>
+        <% @events.each do |e| %>
+          <% if e.horse.id === @horse.id %>
+            <p><%= e.date %> <%= e.description %></p>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
-  </div>
+<% end %>
