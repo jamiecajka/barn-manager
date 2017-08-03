@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Satisfy');
+
 body{
   background: #789048 !important;
 }
@@ -8,11 +10,13 @@ img{
 }
 .header{
   background: #474747;
-  height: 100px;
+  height: 120px;
   text-align: center;
 }
 .barn_name{
   color: #008CBA;
+  font-family: 'Satisfy', cursive;
+  font-size: 60px;
 }
 .card{
   padding-top: 20px;
@@ -24,8 +28,98 @@ img{
 }
 .sign_in{
   padding: 5px;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .sign_up{
   padding: 5px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+.picture{
+  height: 500px;
+}
+.info_tile{
+  text-align: center;
+  background: #474747;
+  height: 500px;
+  border-radius: 50px;
+}
+.registered_name{
+  color: #008CBA;
+  font-family: 'Satisfy', cursive;
+  font-size: 60px;
+}
+.horse_name{
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+  font-size: 50px;
+}
+.user_name{
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+  font-size: 30px;
+}
+.list_items{
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+}
+.charges{
+  padding-top: 25px;
+  padding-left: 40px;
+  padding-bottom: 10px;
+  background: #474747;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+  border-radius: 50px;
+}
+.events{
+  padding-top: 25px;
+  padding-left: 40px;
+  padding-bottom: 10px;
+  background: #474747;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+  border-radius: 50px;
+}
+.charges_head{
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+  text-align: center;
+}
+.events_head{
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+}
+.horse_list{
+  padding-top: 25px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  background: #474747;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+  border-radius: 50px;
+  text-align: center;
+}
+.user_info{
+  padding-top: 25px;
+  padding-left: 10px;
+  background: #474747;
+  height: 250px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+  border-radius: 50px;
+  text-align: center;
+}
+.horse{
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+}
+.horses{
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+}
+.user{
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
 }

@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    # @horse = Horse.find(params[:owner])
-    # @charges = @horses.charges
-    # @events = @horses.events
+    @horse = Horse.all
+    @charges = Charge.all
+    @events = Event.all
   end
 
   def new
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = 'Account was successfully created'
-      redirect_to user_path
+      redirect_to @user
     else
       render :new
     end

@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :user do
       sequence(:email) { |n| "person#{n}@example.com" }
-      name 'John'
+      name 'Jamie Cajka'
       phone_number '123-456-7890'
       address '123 Main St'
       city 'Lincoln'
