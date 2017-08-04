@@ -1,5 +1,4 @@
 class VeterinariansController < ApplicationController
-
   def show
     @veterinarian = Veterinarian.find(params[:id])
   end

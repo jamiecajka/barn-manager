@@ -1,5 +1,4 @@
 class FarriersController < ApplicationController
-
   def show
     @farrier = Farrier.find(params[:id])
   end
