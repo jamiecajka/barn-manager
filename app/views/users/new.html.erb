@@ -16,6 +16,11 @@
 <div class="small-3 small-centered columns">
     <div class="card">
       <% if user_signed_in? %>
+        <% if current_user.admin? %>
+          <h2 class="nav_buttons"> <%= link_to 'Add New Horse', new_horse_path %> </h2>
+          <h2 class="nav_buttons"> <%= link_to 'Add New Veterinarian', new_veterinarian_path %> </h2>
+          <h2 class="nav_buttons"> <%= link_to 'Add New Farrier', new_farrier_path %> </h2>
+        <% end %>
         <h2 class="nav_buttons"> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %> </h2>
         <h2 class="nav_buttons"> <%= link_to 'Edit Account', edit_user_registration_path %></h2>
         <h2 class="nav_buttons"> <%= link_to 'Owner Info', user_path(current_user) %>

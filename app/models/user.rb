@@ -14,4 +14,8 @@ class User < ApplicationRecord
   validates :city, presence: true
   validates :state, presence: true
   validates :zip_code, presence: true, numericality: true
+
+  def admin?
+    role == "admin"
+  end
 end
