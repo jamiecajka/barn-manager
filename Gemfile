@@ -9,7 +9,7 @@ group :test do
   gem 'coveralls', require: false
 end
 
-gem 'pg', '~> 0.18'
+# gem 'pg', '~> 0.18'
 gem 'rails', '~> 5.1.2'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
@@ -42,6 +42,7 @@ end
 
 group :production do
   gem 'rails_12factor'
+  gem 'pg', '~> 0.18'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20170802215752) do
     t.bigint "horse_id"
     t.string "date", null: false
     t.string "description", null: false
-    t.money "amount", scale: 2, null: false
+    t.string "amount", null: false
     t.index ["horse_id"], name: "index_charges_on_horse_id"
   end
 

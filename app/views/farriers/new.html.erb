@@ -1,0 +1,30 @@
+<h1 class="form_header">Add New Farrier</h1>
+<%= simple_form_for @farrier do |f| %>
+<% if @farrier.errors.any? %>
+<div id="error_explanation-farrier">
+        <h2><%= pluralize(@horse.errors.count, "error") %> prohibited this farrier from being saved:</h2>
+
+        <ul>
+        <% @farrier.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+<div class="row">
+  <div class="small-6 large-centered columns">
+    <div class="form-inputs">
+      <%= f.input :name, label: 'Name' %>
+      <%= f.input :phone_number, label: 'Phone Number' %>
+      <%= f.input :address, label: 'Address' %>
+      <%= f.input :city, label: 'City' %>
+      <%= f.input :state, label: 'State' %>
+      <%= f.input :zip_code, label: 'Zip Code' %>
+    </div>
+    <div class='form-actions'>
+      <%= f.button :submit, 'Submit' %>
+      <p><%= link_to "Back", :back, class: 'link' %></p>
+    </div>
+    <% end %>
+  </div>
+</div>

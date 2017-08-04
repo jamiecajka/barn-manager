@@ -13,7 +13,7 @@ end
 
 RSpec.describe Charge do
   context 'making a new charge' do
-    let(:charge) {Charge.new(date: '7/31/17', description: 'description', amount: 10.00, horse_id: 1)}
+    let(:charge) {Charge.new(date: '7/31/17', description: 'description', amount: '10.00', horse_id: 1)}
 
     it 'has a date' do
       expect(charge.date).to include('7/31/17')
@@ -24,7 +24,7 @@ RSpec.describe Charge do
     end
 
     it 'has an amount' do
-      expect(charge.amount).to eq(10.00)
+      expect(charge.amount).to include('10.00')
     end
 
     it 'has a horse_id' do
