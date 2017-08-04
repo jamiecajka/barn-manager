@@ -11,33 +11,33 @@
   <body>
     <% if action_name === 'show' %>
     <div class="fixed">
-      <nav class="top-bar" data-topbar role="navigate", style='background: #474747;'>
+      <nav class="top-bar" data-topbar role="navigate", style='background: #474747; height: 75px;'>
         <ul class="title-area", style='background: #474747;'>
           <li class="name">
-            <h1 class='site_name', style='font-size: 25px;'> Seagull Performance Horses</h1>
+            <h1 class='site_name', style='font-size: 45px; padding: 10px;'> Seagull Performance Horses</h1>
           </li>
         </ul>
         <section class="top-bar-section">
           <ul class="right">
             <% if user_signed_in? %>
               <li class='word'>
-                <%= link_to "Edit Account", edit_user_registration_path, style: "background: #474747; color: #008CBA; font-family: 'Josefin Sans', sans-serif;" %>
+                <%= link_to "Edit Account", edit_user_registration_path, style: "background: #474747; color: #008CBA; font-family: 'Josefin Sans', sans-serif; font-size: 20px; padding-top: 10px;" %>
               </li>
               <li>
-                <%= link_to "Sign Out", destroy_user_session_path, method: :delete, style: "background: #474747; color: #008CBA; font-family: 'Josefin Sans', sans-serif;" %>
+                <%= link_to "Sign Out", destroy_user_session_path, method: :delete, style: "background: #474747; color: #008CBA; font-family: 'Josefin Sans', sans-serif; font-size: 20px; padding-top: 10px;" %>
               </li>
               <li>
-                <%= link_to "Home", root_path, style: "background: #474747; color: #008CBA; font-family: 'Josefin Sans', sans-serif;" %>
+                <%= link_to "Home", root_path, style: "background: #474747; color: #008CBA; font-family: 'Josefin Sans', sans-serif; font-size: 20px; padding-top: 10px;" %>
               </li>
               <li>
-                <%= link_to "Back", :back, style: "background: #474747; color: #008CBA; font-family: 'Josefin Sans', sans-serif;" %>
+                <%= link_to "Back", :back, style: "background: #474747; color: #008CBA; font-family: 'Josefin Sans', sans-serif; font-size: 20px; padding-top: 10px;" %>
               </li>
             <% else %>
               <li>
-                <%= link_to "Sign In", new_user_session_path, style: "background: #474747; color: #008CBA; font-family: 'Josefin Sans', sans-serif;" %>
+                <%= link_to "Sign In", new_user_session_path, style: "background: #474747; color: #008CBA; font-family: 'Josefin Sans', sans-serif; font-size: 20px; padding-top: 10px;" %>
               </li>
               <li>
-                <%= link_to "Home", root_path, style: "background: #474747; color: #008CBA; font-family: 'Josefin Sans', sans-serif;" %>
+                <%= link_to "Home", root_path, style: "background: #474747; color: #008CBA; font-family: 'Josefin Sans', sans-serif; font-size: 20px; padding-top: 10px;" %>
               </li>
             <% end %>
           </ul>
