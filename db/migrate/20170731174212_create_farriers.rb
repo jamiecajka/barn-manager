@@ -1,6 +1,6 @@
-class CreateVeterinarian < ActiveRecord::Migration[5.1]
+class CreateFarriers < ActiveRecord::Migration[5.1]
   def change
-    create_table :veterinarians do |t|
+    create_table :farriers do |t|
       t.string :name, null: false
       t.string :phone_number, null: false
       t.string :address, null: false

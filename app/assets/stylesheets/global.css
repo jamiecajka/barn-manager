@@ -42,6 +42,46 @@ img {
   font-family: 'Josefin Sans', sans-serif;
 }
 
+/*Farrier Show*/
+.farrier_info {
+  padding-top: 25px;
+  padding-left: 10px;
+  background: #474747;
+  height: 250px;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.farrier_header {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+}
+
+.farrier_data {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+}
+
+/*Veterinarian Show*/
+.veterinarian_info {
+  padding-top: 25px;
+  padding-left: 10px;
+  background: #474747;
+  height: 250px;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.veterinarian_header {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+}
+
+.veterinarian_data {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+}
+
 /*Owner Show*/
 .user_info {
   padding-top: 25px;
@@ -80,6 +120,37 @@ img {
   color: #008CBA;
 }
 
+/*Horse Show*/
+.info_tile {
+  text-align: center;
+  background: #474747;
+  height: 500px;
+  border-radius: 50px;
+}
+
+.registered_name {
+  color: #008CBA;
+  font-family: 'Satisfy', cursive;
+  font-size: 60px;
+}
+
+.horse_name {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+  font-size: 50px;
+}
+
+.user_name {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+  font-size: 30px;
+}
+
+.list_items {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+}
+
 /*User and Horse Show*/
 .charges {
   padding-top: 25px;
@@ -109,37 +180,6 @@ img {
 
 .events_head {
   text-align: center;
-  font-family: 'Josefin Sans', sans-serif;
-  color: #008CBA;
-}
-
-/*Horse Show*/
-.info_tile {
-  text-align: center;
-  background: #474747;
-  height: 500px;
-  border-radius: 50px;
-}
-
-.registered_name {
-  color: #008CBA;
-  font-family: 'Satisfy', cursive;
-  font-size: 60px;
-}
-
-.horse_name {
-  font-family: 'Josefin Sans', sans-serif;
-  color: #008CBA;
-  font-size: 50px;
-}
-
-.user_name {
-  font-family: 'Josefin Sans', sans-serif;
-  color: #008CBA;
-  font-size: 30px;
-}
-
-.list_items {
   font-family: 'Josefin Sans', sans-serif;
   color: #008CBA;
 }
