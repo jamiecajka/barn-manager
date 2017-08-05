@@ -1,13 +1,40 @@
 require 'spec_helper'
 require 'rails_helper'
 
-feature 'add horse' do
+feature 'admin can add a new horse' do
+  scenario 'admin can see link to add a new horse when they login' do
+    user = FactoryGirl.create(:user, email: 'test3@email.com')
+    visit root_path
+    click_link 'Sign In'
+    fill_in 'Email', with: 'test3@email.com'
+    fill_in 'Password', with: 'password'
+    click_on 'Log In'
+
+    expect(page).to have_content('Add New Horse')
+  end
+
+  scenario 'admin clicks on link Add New Horse and is redirected to a form' do
+    user = FactoryGirl.create(:user, email: 'test3@email.com')
+    visit root_path
+    click_link 'Sign In'
+    fill_in 'Email', with: 'test3@email.com'
+    fill_in 'Password', with: 'password'
+    click_on 'Log In'
+    click_on 'Add New Horse'
+
+    expect(page).to have_content('Add New Horse')
+  end
 
   scenario 'specifying valid and required information' do
-    user = FactoryGirl.create(:user)
     veterinarian = FactoryGirl.create(:veterinarian)
     ferrier = FactoryGirl.create(:farrier)
-    visit new_horse_path
+    user = FactoryGirl.create(:user, email: 'test3@email.com')
+    visit root_path
+    click_link 'Sign In'
+    fill_in 'Email', with: 'test3@email.com'
+    fill_in 'Password', with: 'password'
+    click_on 'Log In'
+    click_on 'Add New Horse'
     fill_in 'Registered Name', with: 'RA Kasanova'
     fill_in 'Barn Name', with: 'Kas'
     fill_in 'Breed', with: 'Arabian'
