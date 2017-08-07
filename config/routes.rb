@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :veterinarians
   resources :notes
   resources :charges
+  resources :events
 
   root 'users#new'
 end
