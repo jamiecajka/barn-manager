@@ -37,11 +37,6 @@ img {
   border-radius: 25px;
 }
 
-.nav_buttons {
-  padding: 5px;
-  font-family: 'Josefin Sans', sans-serif;
-}
-
 /*Farrier Show*/
 .farrier_info {
   padding-top: 25px;
@@ -108,6 +103,8 @@ img {
   color: #008CBA;
   border-radius: 50px;
   text-align: center;
+  height: 250px;
+  overflow-y: auto;
 }
 
 .horse {
@@ -120,11 +117,21 @@ img {
   color: #008CBA;
 }
 
+h2.nav_buttons {
+  margin-top: 25px;
+  padding: 10px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+  background: #474747;
+  border-radius: 50px;
+  text-align: center;
+}
+
 /*Horse Show*/
 .info_tile {
   text-align: center;
   background: #474747;
-  height: 500px;
+  height: 425px;
   border-radius: 50px;
 }
 
@@ -160,16 +167,20 @@ img {
   font-family: 'Josefin Sans', sans-serif;
   color: #008CBA;
   border-radius: 50px;
+  height: 300px;
+  overflow-y: auto;
 }
 
 .events {
   padding-top: 25px;
-  padding-left: 40px;
+  padding-left: 100px;
   padding-bottom: 10px;
   background: #474747;
   font-family: 'Josefin Sans', sans-serif;
   color: #008CBA;
   border-radius: 50px;
+  height: 300px;
+  overflow-y: auto;
 }
 
 .charges_head {
@@ -179,6 +190,26 @@ img {
 }
 
 .events_head {
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+}
+
+.notes {
+  padding-top: 25px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  background: #474747;
+  height: 300px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+  text-align: center;
+  border-radius: 50px;
+  overflow-y: auto;
+}
+
+.notes_head {
   text-align: center;
   font-family: 'Josefin Sans', sans-serif;
   color: #008CBA;

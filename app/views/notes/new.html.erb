@@ -1,0 +1,29 @@
+<br></br>
+<h1 class="form_header">Add New Note</h1>
+<%= simple_form_for @note do |f| %>
+<% if @note.errors.any? %>
+<div id="error_explanation-note">
+        <h2><%= pluralize(@note.errors.count, "error") %> prohibited this note from being saved:</h2>
+
+        <ul>
+        <% @note.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+<div class="row">
+  <div class="small-6 large-centered columns">
+    <div class="form-inputs">
+      <%= f.label :horse_id, 'Horse' %>
+      <%= f.select :horse_id, Horse.all.collect { |h| [h.barn_name, h.id] } %>
+      <%= f.label :text, 'Enter Note' %>
+      <%= f.text_area :text %>
+    </div>
+  </div>
+    <div class="form-actions">
+      <%= f.button :submit, 'Submit' %>
+      <p><%= link_to "Back", :back, class: 'link' %></p>
+    </div>
+    <% end %>
+  </div>

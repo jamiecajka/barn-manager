@@ -22,7 +22,7 @@ gem 'foundation-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 
-group :development, :test do
+group :development do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'faker', github: 'stympy/faker'
   gem 'listen', '~> 3.1.5'
