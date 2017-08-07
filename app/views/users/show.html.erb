@@ -5,14 +5,58 @@
     <div class="small-6 columns">
       <div class='user_info'>
         <h1 class='user'><%= @user.name %></h1>
-        <p><%= @user.email %></p>
-        <p><%= @user.phone_number %></p>
-        <p><%= @user.city %>, <%= @user.state %> <%= @user.zip_code %></p>
+        <p><%= @user.email %><br />
+        <%= @user.phone_number %><br />
+        <%= @user.address %> <br />
+        <%= @user.city %>, <%= @user.state %> <%= @user.zip_code %></p>
       </div>
     </div>
-    <br></br>
+      <% if current_user.admin? %>
     <div class="small-6 columns">
-      <div class='horse_list' { display: inline }>
+      <div class='horse_list'>
+        <h2 class='horse'>Horses</h2>
+        <% @horse.each do |h| %>
+          <a href=<%= horse_path(h.id) %>>
+          <h3 class='horses'><%= h.barn_name %></h3>
+          <% end %>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div class="row">
+        <div class="medium-3 columns">
+          <a href=<%= new_horse_path %>>
+            <div class="callout">
+              <h2 class="nav_buttons">Add New Horse</h2>
+            </div>
+          </a>
+        </div>
+          <div class="medium-3 columns">
+            <a href= <%= new_veterinarian_path %>>
+              <div class="callout">
+                <h2 class="nav_buttons">Add New Veterinarian</h2>
+              </div>
+            </a>
+          </div>
+          <div class="medium-3 columns">
+            <a href= <%= new_farrier_path %>>
+              <div class="callout">
+                <h2 class="nav_buttons">Add New Farrier</h2>
+              </div>
+            </a>
+          </div>
+          <div class="medium-3 columns">
+            <a href= <%= new_note_path %>>
+              <div class="callout">
+                <h2 class="nav_buttons">Add New Note</h2>
+              </div>
+            </a>
+          </div>
+      </div>
+    <% end %>
+    <% else %>
+    <div class="small-6 columns">
+      <div class='horse_list'>
         <h2 class='horse'>Horses</h2>
         <% @horse.each do |h| %>
         <a href=<%= horse_path(h.id) %>>
@@ -30,7 +74,7 @@
   <br></br>
   <div class="row">
     <div class="small-6 columns">
-      <div class='charges' { display: inline }>
+      <div class='charges'>
         <h3 class='charges_head'>Charges</h3>
         <% @horse.each do |h| %>
           <% if h.user.id === @user.id %>
@@ -44,13 +88,30 @@
       </div>
     </div>
     <div class="small-6 columns">
-      <div class='events' { display: inline }>
+      <div class='events'>
         <h3 class='events_head'>Events</h3>
         <% @horse.each do |h| %>
           <% if h.user.id === @user.id %>
             <% @events.each do |e| %>
               <% if e.horse.id === h.id %>
                 <p><%= e.date %> <%= e.description %>-<%= h.barn_name %></p>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <br></br>
+  <div class='row>'>
+    <div class='large-6 large-centered columns'>
+      <div class='notes'>
+        <h3 class='notes_head'>Notes</h3>
+        <% @horse.each do |h| %>
+          <% if h.user.id === @user.id %>
+            <% @notes.each do |n| %>
+              <% if n.horse.id === h.id %>
+                <p><%= n.created_at.strftime("%b. %d, %Y") %>-<%= h.barn_name %></p>
               <% end %>
             <% end %>
           <% end %>

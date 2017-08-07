@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @horse = Horse.all
     @charges = Charge.all
     @events = Event.all
+    @notes = Note.all
   end
 
   def new

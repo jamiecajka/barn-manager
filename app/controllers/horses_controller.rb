@@ -7,6 +7,7 @@ class HorsesController < ApplicationController
     @farriers = @horse.farrier
     @charges = Charge.all
     @events = Event.all
+    @notes = Note.all
   end
 
   def new
@@ -28,14 +29,11 @@ class HorsesController < ApplicationController
 
   def horse_params
     params.require(:horse).permit(
-      :registered_name,
       :barn_name,
       :breed,
-      :discipline,
       :user_id,
       :veterinarian_id,
       :farrier_id,
-      :picture
     )
   end
 
