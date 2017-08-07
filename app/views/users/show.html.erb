@@ -61,9 +61,14 @@
               </div>
             </a>
           </div>
+          <div class="medium-3 columns">
+            <a href= <%= new_event_path %>>
+              <div class="callout">
+                <h2 class="nav_buttons">Add New Event</h2>
+              </div>
+            </a>
+          </div>
         </div>
-
-    <% end %>
     <% else %>
     <div class="small-6 columns">
       <div class='horse_list'>
@@ -90,7 +95,7 @@
           <% if h.user.id === @user.id %>
             <% @charges.each do |c| %>
               <% if c.horse.id === h.id %>
-                <p><%= c.date %> <%= c.description %> <%= c.amount %>-<%= h.barn_name %></p>
+                <p><%= c.date.strftime("%B %d, %Y") %> <%= c.description %> <%= c.amount %>-<%= h.barn_name %></p>
               <% end %>
             <% end %>
           <% end %>
@@ -104,7 +109,7 @@
           <% if h.user.id === @user.id %>
             <% @events.each do |e| %>
               <% if e.horse.id === h.id %>
-                <p><%= e.date %> <%= e.description %>-<%= h.barn_name %></p>
+                <p><%= e.date.strftime("%B %d, %Y") %> at <%= e.time %> <%= e.description %>-<%= h.barn_name %></p>
               <% end %>
             <% end %>
           <% end %>
@@ -129,4 +134,5 @@
       </div>
     </div>
   </div>
+<% end %>
 <% end %>

@@ -22,7 +22,7 @@ feature 'admin can add a new charge' do
     click_on 'Log In'
     click_on 'Owner Info'
 
-    expect(page).to have_content('Add New Note')
+    expect(page).to have_content('Add New Charge')
   end
 
   scenario 'admin clicks on link Add New Note and is redirected to a form' do

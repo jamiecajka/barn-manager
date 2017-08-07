@@ -117,6 +117,26 @@ img {
   color: #008CBA;
 }
 
+/*Event Show*/
+.event_info {
+  padding-top: 25px;
+  padding-left: 10px;
+  background: #474747;
+  height: 250px;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.event_header {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+}
+
+.event_data {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+}
+
 /*Owner Show*/
 .user_info {
   padding-top: 25px;

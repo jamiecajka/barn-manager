@@ -1,0 +1,37 @@
+<br></br>
+<h1 class="form_header">Add New Event</h1>
+<%= simple_form_for @event do |f| %>
+<% if @event.errors.any? %>
+<div id="error_explanation-event">
+        <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+        <ul>
+        <% @event.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+<div class="row">
+  <div class="small-6 large-centered columns">
+    <div class="form-inputs">
+      <%= f.label :horse_id, 'Horse' %>
+      <%= f.select :horse_id, Horse.all.collect { |h| [h.barn_name, h.id] } %>
+      <%= f.label :date, 'Date' %>
+      <%= f.date_select('date',
+          options = { start_year: 2017, order: [:month, :day, :year]},
+          html_options = { class: 'select-date'})  %>
+          <%= f.label :time, 'Time' %>
+          <%= f.input :time %>
+      <%= f.label :description, 'Description' %>
+      <%= f.input :description %>
+      <%= f.label :notes, 'Additional Info' %>
+      <%= f.text_area :notes %>
+    </div>
+  </div>
+    <div class="form-actions">
+      <%= f.button :submit, 'Submit' %>
+      <p><%= link_to "Back", :back, class: 'link' %></p>
+    </div>
+    <% end %>
+  </div>
