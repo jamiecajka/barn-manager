@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :farriers
   resources :veterinarians
   resources :notes
+  resources :charges
 
   root 'users#new'
 end

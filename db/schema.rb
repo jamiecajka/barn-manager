@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20170805193800) do
 
   create_table "charges", force: :cascade do |t|
     t.bigint "horse_id"
-    t.string "date", null: false
+    t.date "date", null: false
     t.string "description", null: false
     t.string "amount", null: false
     t.index ["horse_id"], name: "index_charges_on_horse_id"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20170805193800) do
 
   create_table "events", force: :cascade do |t|
     t.bigint "horse_id"
-    t.string "date", null: false
+    t.date "date", null: false
     t.string "description", null: false
     t.string "time", null: false
     t.text "notes"

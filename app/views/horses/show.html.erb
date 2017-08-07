@@ -28,7 +28,7 @@
         <h3 class='charges_head'>Charges</h3>
         <% @charges.each do |c| %>
           <% if c.horse.id === @horse.id %>
-            <p><%= c.date %> <%= c.description %>: $<%= c.amount %></p>
+            <p><%= c.date.strftime("%B %d, %Y") %>: <%= c.description %>: $<%= c.amount %></p>
           <% end %>
         <% end %>
       </div>
@@ -38,7 +38,7 @@
         <h3 class='events_head'>Events</h3>
         <% @events.each do |e| %>
           <% if e.horse.id === @horse.id %>
-            <p><%= e.date %> <%= e.time %> <%= e.description %></p>
+            <p><%= e.date.strftime("%B %d, %Y") %> <%= e.time %> <%= e.description %></p>
           <% end %>
         <% end %>
       </div>

@@ -77,6 +77,46 @@ img {
   color: #008CBA;
 }
 
+/*Charge Show*/
+.charge_info {
+  padding-top: 25px;
+  padding-left: 10px;
+  background: #474747;
+  height: 250px;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.charge_header {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+}
+
+.charge_data {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+}
+
+/*Note Show*/
+.note_info {
+  padding-top: 25px;
+  padding-left: 10px;
+  background: #474747;
+  height: 250px;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.note_header {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+}
+
+.note_data {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+}
+
 /*Owner Show*/
 .user_info {
   padding-top: 25px;
@@ -117,7 +157,7 @@ img {
   color: #008CBA;
 }
 
-h2.nav_buttons {
+.nav_buttons {
   margin-top: 25px;
   padding: 10px;
   font-family: 'Josefin Sans', sans-serif;
@@ -173,7 +213,7 @@ h2.nav_buttons {
 
 .events {
   padding-top: 25px;
-  padding-left: 100px;
+  padding-left: 40px;
   padding-bottom: 10px;
   background: #474747;
   font-family: 'Josefin Sans', sans-serif;
@@ -185,12 +225,14 @@ h2.nav_buttons {
 
 .charges_head {
   font-family: 'Josefin Sans', sans-serif;
+  padding-right: 40px;
   color: #008CBA;
   text-align: center;
 }
 
 .events_head {
   text-align: center;
+  padding-right: 40px;
   font-family: 'Josefin Sans', sans-serif;
   color: #008CBA;
 }
