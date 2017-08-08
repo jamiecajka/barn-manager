@@ -86,7 +86,6 @@
     </div>
   </div>
   <br></br>
-  <br></br>
   <div class="row">
     <div class="small-6 columns">
       <div class='charges'>
@@ -95,6 +94,7 @@
           <% if h.user.id === @user.id %>
             <% @charges.each do |c| %>
               <% if c.horse.id === h.id %>
+                <a href= <%= charge_path(c.id) %>
                 <p><%= c.date.strftime("%B %d, %Y") %> <%= c.description %> <%= c.amount %>-<%= h.barn_name %></p>
               <% end %>
             <% end %>
@@ -108,6 +108,7 @@
         <% @horse.each do |h| %>
           <% if h.user.id === @user.id %>
             <% @events.each do |e| %>
+              <a href= <%= event_path(e.id) %>
               <% if e.horse.id === h.id %>
                 <p><%= e.date.strftime("%B %d, %Y") %> at <%= e.time %> <%= e.description %>-<%= h.barn_name %></p>
               <% end %>
@@ -117,7 +118,7 @@
       </div>
     </div>
   </div>
-  <br></br>
+</div>
   <div class='row>'>
     <div class='large-6 large-centered columns'>
       <div class='notes'>
@@ -125,6 +126,7 @@
         <% @horse.each do |h| %>
           <% if h.user.id === @user.id %>
             <% @notes.each do |n| %>
+              <a href= <%= note_path(n.id) %>
               <% if n.horse.id === h.id %>
                 <p><%= n.created_at.strftime("%b. %d, %Y") %>-<%= h.barn_name %></p>
               <% end %>

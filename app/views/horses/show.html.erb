@@ -14,13 +14,12 @@
           <div class="list_items">
           <p>Breed: <%= @horse.breed %><br />
           Discipline: <%= @horse.discipline %><br />
-          Veterinarian: <%= @horse.veterinarian.name %><br />
-          Farrier: <%= @horse.farrier.name %></p>
+          Veterinarian: <%= link_to @horse.veterinarian.name, veterinarian_path(@horse.veterinarian.id)%><br />
+          Farrier: <%= link_to @horse.farrier.name, farrier_path(@horse.farrier.id) %></p>
         </div>
       </div>
     </div>
   </div>
-  <br></br>
   <br></br>
   <div class="row">
     <div class="small-6 columns">
@@ -28,6 +27,7 @@
         <h3 class='charges_head'>Charges</h3>
         <% @charges.each do |c| %>
           <% if c.horse.id === @horse.id %>
+            <a href= <%= charge_path(c.id) %>
             <p><%= c.date.strftime("%B %d, %Y") %>: <%= c.description %>: $<%= c.amount %></p>
           <% end %>
         <% end %>
@@ -38,18 +38,19 @@
         <h3 class='events_head'>Events</h3>
         <% @events.each do |e| %>
           <% if e.horse.id === @horse.id %>
+            <a href= <%= event_path(e.id) %>
             <p><%= e.date.strftime("%B %d, %Y") %> <%= e.time %> <%= e.description %></p>
           <% end %>
         <% end %>
       </div>
     </div>
   </div>
-  <br></br>
   <div class="row">
     <div class="large-10 large-centered columns">
       <div class='notes'>
         <h3 class='notes_head'>Notes</h3>
           <% @notes.each do |n| %>
+            <a href= <%= note_path(n.id) %>
             <% if n.horse.id === @horse.id %>
               <p><%= n.created_at.strftime("%b. %d, %Y") %> <%= n.text %></p>
             <% end %>
