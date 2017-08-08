@@ -48,35 +48,7 @@ User.create(
   role: 'admin'
 )
 
-# Charge.create(
-#   date: '8/01/17',
-#   description: 'August Board',
-#   amount: '$400.00',
-#   horse_id: 1
-# )
-#
-# Charge.create(
-#   date: '8/01/17',
-#   description: 'August Board',
-#   amount: '$400.00',
-#   horse_id: 2
-# )
-#
-#
-# Event.create(
-#   date: '8/23/17',
-#   description: 'Farrier Visit',
-#   time: '2:30pm',
-#   horse_id: 1
-# )
-#
-# Event.create(
-#   date: '8/23/17',
-#   description: 'Farrier Visit',
-#   time: '2:30pm',
-#   horse_id: 2
-# )
-#
-# 10.times do
-#   Note.create(horse_id: rand(1..2), text: Faker::Hipster.paragraph)
-# end
+
+10.times do
+  Note.create(horse_id: rand(1..2), text: Faker::Hipster.paragraph)
+end
