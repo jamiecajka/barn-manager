@@ -7,7 +7,14 @@ body {
 .site_name {
   color: #008CBA;
   font-family: 'Satisfy', cursive;
-  padding-left: 10px;
+}
+
+.title-area {
+  padding: 7px 15px 5px 5px;
+}
+
+.top-bar-section{
+  padding: 5px 15px 5px 15px;
 }
 
 /*Home Page*/
@@ -30,11 +37,15 @@ img {
 
 .card {
   padding-top: 20px;
-  width: 300px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 400px;
+  min-height: 100px;
   background: #474747;
   text-align: center;
   padding-bottom: 20px;
   border-radius: 25px;
+  margin-bottom: 25px;
 }
 
 /*Farrier Show*/
@@ -275,6 +286,7 @@ img {
   border-radius: 50px;
   overflow-y: auto;
   margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 .notes_head {
@@ -306,4 +318,32 @@ img {
 .link {
   color: #474747;
   font-family: 'Josefin Sans', sans-serif;
+}
+
+/*Veterinarian Index*/
+.vet-head {
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+  font-size: 60px;
+}
+
+.vet-list {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+  font-size: 30px;
+}
+
+/*Farrier Index*/
+.farrier-head {
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+  font-size: 60px;
+}
+
+.farrier-list {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #008CBA;
+  font-size: 30px;
 }

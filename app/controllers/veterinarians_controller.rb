@@ -1,5 +1,9 @@
 class VeterinariansController < ApplicationController
   before_action :authorize_user, except: [:index, :show]
+  def index
+    @veterinarians = Veterinarian.all
+  end
+
   def show
     @veterinarian = Veterinarian.find(params[:id])
   end

@@ -1,0 +1,15 @@
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="small-3 small-centered columns">
+  <div class="card">
+    <h1 class='farrier-head'>Farriers</h1>
+    <% @farriers.each do |f| %>
+      <a href= <%= farrier_path(f.id) %>
+        <h4 class='farrier-list'><%= f.name %> <br /></h4>
+      </a>
+    <% end %>
+  </div>
+</div>
