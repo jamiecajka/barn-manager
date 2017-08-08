@@ -3,7 +3,7 @@ class FarriersController < ApplicationController
   def index
     @farriers = Farrier.all
   end
-  
+
   def show
     @farrier = Farrier.find(params[:id])
   end
@@ -26,6 +26,16 @@ class FarriersController < ApplicationController
   def edit
     @farrier = Farrier.find(params[:id])
   end
+
+  def update
+   @farrier = Farrier.find(params[:id])
+   if @farrier.update_attributes(farrier_params)
+     flash[:notice] = "Farrier Updated!"
+     redirect_to @farrier
+   else
+     render 'edit'
+   end
+ end
 
   def destroy
     @farrier = Farrier.find(params[:id])
