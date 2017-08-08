@@ -1,0 +1,35 @@
+<br></br>
+<h1 class="form_header">Edit Charge</h1>
+<%= simple_form_for @charge do |f| %>
+<% if @charge.errors.any? %>
+<div id="error_explanation-charge">
+        <h2><%= pluralize(@charge.errors.count, "error") %> prohibited this charge from being saved:</h2>
+
+        <ul>
+        <% @charge.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+<div class="row">
+  <div class="small-6 large-centered columns">
+    <div class="form-inputs">
+      <%= f.label :horse_id, 'Horse' %>
+      <%= f.select :horse_id, Horse.all.collect { |h| [h.barn_name, h.id] } %>
+      <%= f.label :date, 'Due Date' %>
+      <%= f.date_select('date',
+          options = { start_year: 2017, order: [:month, :day, :year]},
+          html_options = { class: 'select-date'})  %>
+      <%= f.label :amount, 'Amount' %>
+      <%= f.input :amount %>
+      <%= f.label :description, 'Description' %>
+      <%= f.input :description %>
+    </div>
+  </div>
+    <div class="form-actions">
+      <%= f.button :submit, 'Update' %>
+      <p><%= link_to "Back", :back, class: 'link' %></p>
+    </div>
+    <% end %>
+  </div>

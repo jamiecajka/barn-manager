@@ -20,6 +20,10 @@ class NotesController < ApplicationController
     end
   end
 
+  def edit
+    @note = Note.find(params[:id])
+  end
+
   private
 
   def note_params

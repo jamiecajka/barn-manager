@@ -19,6 +19,10 @@ class VeterinariansController < ApplicationController
     end
   end
 
+  def edit
+    @veterinarian = Veterinarian.find(params[:id])
+  end
+
   private
 
   def veterinarian_params

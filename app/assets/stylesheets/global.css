@@ -41,8 +41,9 @@ img {
 .farrier_info {
   padding-top: 25px;
   padding-left: 10px;
+  padding-bottom: 25px;
   background: #474747;
-  height: 250px;
+  min-height: 250px;
   border-radius: 50px;
   text-align: center;
 }
@@ -61,8 +62,9 @@ img {
 .veterinarian_info {
   padding-top: 25px;
   padding-left: 10px;
+  padding-bottom: 25px;
   background: #474747;
-  height: 250px;
+  min-height: 250px;
   border-radius: 50px;
   text-align: center;
 }
@@ -265,7 +267,6 @@ img {
   padding-left: 40px;
   padding-right: 40px;
   padding-bottom: 10px;
-  margin-top: 25px;
   background: #474747;
   height: 300px;
   font-family: 'Josefin Sans', sans-serif;
@@ -273,6 +274,7 @@ img {
   text-align: center;
   border-radius: 50px;
   overflow-y: auto;
+  margin-top: 25px;
 }
 
 .notes_head {
@@ -290,8 +292,6 @@ img {
 
 .form-actions {
   padding-left: 25px;
-  font-family: 'Josefin Sans', sans-serif;
-  color: #474747;
 }
 
 .form_header {

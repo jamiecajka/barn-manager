@@ -16,6 +16,10 @@
           Discipline: <%= @horse.discipline %><br />
           Veterinarian: <%= link_to @horse.veterinarian.name, veterinarian_path(@horse.veterinarian.id)%><br />
           Farrier: <%= link_to @horse.farrier.name, farrier_path(@horse.farrier.id) %></p>
+          <% end %>
+          <% if current_user.admin? %>
+          <%= link_to 'Edit', edit_horse_path(params[:id]) %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -58,4 +62,3 @@
         </div>
       </div>
     </div>
-<% end %>
