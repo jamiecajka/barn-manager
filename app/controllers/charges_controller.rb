@@ -24,6 +24,15 @@ class ChargesController < ApplicationController
     @charge = Charge.find(params[:id])
   end
 
+  def destroy
+    @charge = Charge.find(params[:id])
+
+    if @charge.destroy
+      flash[:notice] = 'Charge has been deleted.'
+      redirect_to new_charge_path
+    end
+  end
+
   private
 
   def charge_params

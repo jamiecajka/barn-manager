@@ -23,6 +23,15 @@ class FarriersController < ApplicationController
     @farrier = Farrier.find(params[:id])
   end
 
+  def destroy
+    @farrier = Farrier.find(params[:id])
+
+    if @farrier.destroy
+      flash[:notice] = 'Farrier has been deleted.'
+      redirect_to new_farrier_path
+    end
+  end
+
   private
 
   def farrier_params

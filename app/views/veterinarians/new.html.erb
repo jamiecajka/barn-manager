@@ -23,7 +23,8 @@
     </div>
     <div class='form-actions'>
       <%= f.button :submit, 'Submit' %>
-      <p><%= link_to "Back", :back, class: 'link' %></p>
+      <p><%= link_to "Back", :back, class: 'link' %> <br />
+         <%= link_to 'Home', user_path(current_user), style: 'color: #474747;' %></p>
     </div>
     <% end %>
   </div>
