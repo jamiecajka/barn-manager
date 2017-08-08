@@ -1,31 +1,33 @@
-<h1 class="form_header">Add New Veterinarian</h1>
-<%= simple_form_for @veterinarian do |f| %>
-<% if @veterinarian.errors.any? %>
-<div id="error_explanation-veterinarian">
-        <h2><%= pluralize(@horse.errors.count, "error") %> prohibited this veterinarian from being saved:</h2>
+<% if user_signed_in? && current_user.admin? %>
+  <h1 class="form_header">Add New Veterinarian</h1>
+  <%= simple_form_for @veterinarian do |f| %>
+  <% if @veterinarian.errors.any? %>
+  <div id="error_explanation-veterinarian">
+          <h2><%= pluralize(@horse.errors.count, "error") %> prohibited this veterinarian from being saved:</h2>
 
-        <ul>
-        <% @veterinarian.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
+          <ul>
+          <% @veterinarian.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+  <div class="row">
+    <div class="small-6 large-centered columns">
+      <div class="form-inputs">
+        <%= f.input :name, label: 'Name' %>
+        <%= f.input :phone_number, label: 'Phone Number' %>
+        <%= f.input :address, label: 'Address' %>
+        <%= f.input :city, label: 'City' %>
+        <%= f.input :state, label: 'State' %>
+        <%= f.input :zip_code, label: 'Zip Code' %>
       </div>
-    <% end %>
-<div class="row">
-  <div class="small-6 large-centered columns">
-    <div class="form-inputs">
-      <%= f.input :name, label: 'Name' %>
-      <%= f.input :phone_number, label: 'Phone Number' %>
-      <%= f.input :address, label: 'Address' %>
-      <%= f.input :city, label: 'City' %>
-      <%= f.input :state, label: 'State' %>
-      <%= f.input :zip_code, label: 'Zip Code' %>
+      <div class='form-actions'>
+        <%= f.button :submit, 'Submit' %>
+        <p><%= link_to "Back", :back, class: 'link' %> <br />
+           <%= link_to 'Home', user_path(current_user), style: 'color: #474747;' %></p>
+      </div>
+      <% end %>
     </div>
-    <div class='form-actions'>
-      <%= f.button :submit, 'Submit' %>
-      <p><%= link_to "Back", :back, class: 'link' %> <br />
-         <%= link_to 'Home', user_path(current_user), style: 'color: #474747;' %></p>
-    </div>
-    <% end %>
   </div>
-</div>
+<% end %>

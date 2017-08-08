@@ -1,0 +1,15 @@
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="small-3 small-centered columns">
+  <div class="card">
+    <h1 class='vet-head'>Veterinarians</h1>
+    <% @veterinarians.each do |v| %>
+      <a href= <%= veterinarian_path(v.id) %>
+        <h4 class='vet-list'><%= v.name %> <br /></h4>
+      </a>
+    <% end %>
+  </div>
+</div>

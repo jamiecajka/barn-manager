@@ -1,5 +1,9 @@
 class FarriersController < ApplicationController
   before_action :authorize_user, except: [:index, :show]
+  def index
+    @farriers = Farrier.all
+  end
+  
   def show
     @farrier = Farrier.find(params[:id])
   end
