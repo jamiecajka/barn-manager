@@ -23,7 +23,8 @@
     </div>
     <div class='form-actions'>
       <%= f.button :submit, 'Update' %>
-      <p><%= link_to "Back", :back, class: 'link' %></p>
+      <p><%= link_to "Delete Farrier", farrier_path(@farrier.id), data: { confirm: "Are you sure?" }, method: :delete, style: 'color: #474747;' %> <br />
+        <%= link_to "Back", :back, class: 'link' %></p>
     </div>
     <% end %>
   </div>

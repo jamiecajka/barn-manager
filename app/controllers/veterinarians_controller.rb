@@ -23,6 +23,15 @@ class VeterinariansController < ApplicationController
     @veterinarian = Veterinarian.find(params[:id])
   end
 
+  def destroy
+    @veterinarian = Veterinarian.find(params[:id])
+
+    if @veterinarian.destroy
+      flash[:notice] = 'Veterinarian has been deleted.'
+      redirect_to new_veterinarian_path
+    end
+  end
+
   private
 
   def veterinarian_params

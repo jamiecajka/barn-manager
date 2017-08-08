@@ -292,6 +292,8 @@ img {
 
 .form-actions {
   padding-left: 25px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #474747;
 }
 
 .form_header {

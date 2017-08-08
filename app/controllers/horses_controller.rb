@@ -29,6 +29,15 @@ class HorsesController < ApplicationController
     @horse = Horse.find(params[:id])
   end
 
+  def destroy
+    @horse = Horse.find(params[:id])
+
+    if @horse.destroy
+      flash[:notice] = 'Horse has been deleted.'
+      redirect_to new_horse_path
+    end
+  end
+
   private
 
   def horse_params
