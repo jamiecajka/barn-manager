@@ -27,6 +27,16 @@ class VeterinariansController < ApplicationController
     @veterinarian = Veterinarian.find(params[:id])
   end
 
+  def update
+   @veterinarian = Veterinarian.find(params[:id])
+   if @veterinarian.update_attributes(veterinarian_params)
+     flash[:notice] = "Veterinarian Updated!"
+     redirect_to @veterinarian
+   else
+     render 'edit'
+   end
+ end
+
   def destroy
     @veterinarian = Veterinarian.find(params[:id])
 

@@ -24,6 +24,16 @@ class ChargesController < ApplicationController
     @charge = Charge.find(params[:id])
   end
 
+  def update
+   @charge = Charge.find(params[:id])
+   if @charge.update_attributes(charge_params)
+     flash[:notice] = "Charge Updated!"
+     redirect_to @charge
+   else
+     render 'edit'
+   end
+ end
+
   def destroy
     @charge = Charge.find(params[:id])
 

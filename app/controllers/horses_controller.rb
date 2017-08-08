@@ -29,6 +29,16 @@ class HorsesController < ApplicationController
     @horse = Horse.find(params[:id])
   end
 
+  def update
+   @horse = Horse.find(params[:id])
+   if @horse.update_attributes(horse_params)
+     flash[:notice] = "Horse Updated!"
+     redirect_to @horse
+   else
+     render 'edit'
+   end
+ end
+
   def destroy
     @horse = Horse.find(params[:id])
 
