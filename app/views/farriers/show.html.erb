@@ -9,6 +9,9 @@
       <h3 class='farrier_data'><%= @farrier.phone_number %></h3>
       <h3 class='farrier_data'><%= @farrier.address %></h3>
       <h3 class='farrier_data'><%= @farrier.city %>, <%= @farrier.state %> <%= @farrier.zip_code %></h3>
+      <% if current_user.admin? %>
+        <%= link_to 'Edit', edit_farrier_path(params[:id]) %>
+      <% end %>
     </div>
   </div>
 </div

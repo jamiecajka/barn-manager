@@ -13,8 +13,7 @@ class ApplicationController < ActionController::Base
       :address,
       :city,
       :state,
-      :zip_code,
-      :trainer
+      :zip_code
     ])
   end
 end

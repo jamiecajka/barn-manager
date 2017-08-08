@@ -20,6 +20,10 @@ class ChargesController < ApplicationController
     end
   end
 
+  def edit
+    @charge = Charge.find(params[:id])
+  end
+
   private
 
   def charge_params

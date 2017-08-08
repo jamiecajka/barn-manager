@@ -9,6 +9,10 @@
         <h3 class='event_data'><%= @event.date.strftime("%B %d, %Y")%> at <%= @event.time %></h3>
         <h3 class='event_data'>Description: <%= @event.description %></h3>
         <h3 class='event_data'>Additional Info: <%= @event.notes %></h3>
+        <% if current_user.admin? %>
+          <%= link_to 'Edit', edit_event_path(params[:id]) %><br />
+          <%= link_to 'Back to Horse', horse_path(@event.horse_id) %>
+        <% end %>
     </div>
   </div>
 </div

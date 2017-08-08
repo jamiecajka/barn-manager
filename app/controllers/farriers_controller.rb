@@ -19,6 +19,10 @@ class FarriersController < ApplicationController
     end
   end
 
+  def edit
+    @farrier = Farrier.find(params[:id])
+  end
+
   private
 
   def farrier_params

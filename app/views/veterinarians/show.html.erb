@@ -9,6 +9,9 @@
       <h3 class='veterinarian_data'><%= @veterinarian.phone_number %></h3>
       <h3 class='veterinarian_data'><%= @veterinarian.address %></h3>
       <h3 class='veterinarian_data'><%= @veterinarian.city %>, <%= @veterinarian.state %> <%= @veterinarian.zip_code %></h3>
+      <% if current_user.admin? %>
+        <%= link_to 'Edit', edit_veterinarian_path(params[:id]) %>
+      <% end %>
     </div>
   </div>
 </div
