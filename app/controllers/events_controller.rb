@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :authorize_user, except: [:index, :show]
+  before_action :authorize_user, except: [:show]
   def show
     @event = Event.find(params[:id])
     @horse = @event.horse

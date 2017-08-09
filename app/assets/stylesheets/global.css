@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Satisfy');
 
-body, html {
-    background-image: url("green_wall.jpg") !important;
-    background: #476B22;
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url("vintage-clean.jpg") !important;
+    background: #126C1E;
     background-attachment: scroll;
     background-position: center center;
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -28,8 +31,9 @@ body, html {
   height:450px;
   width: 878px;
   text-align: center;
-  margin-bottom: 25px;
-  margin-top: 10px;
+  /*margin-bottom: 25px;*/
+  margin-top: 20px;
+  opacity: 0.9
 }
 
 .barn_name {
@@ -51,6 +55,7 @@ body, html {
   border-radius: 25px;
   margin-bottom: 25px;
   opacity: 0.9;
+  margin-bottom: 25px;
 }
 
 /*Farrier Show*/
@@ -63,6 +68,7 @@ body, html {
   border-radius: 50px;
   text-align: center;
   opacity: 0.9;
+  margin-bottom: 25px;
 }
 
 .farrier_header {
@@ -85,6 +91,7 @@ body, html {
   border-radius: 50px;
   text-align: center;
   opacity: 0.9;
+  margin-bottom: 25px;
 }
 
 .veterinarian_header {
@@ -107,6 +114,7 @@ body, html {
   border-radius: 50px;
   text-align: center;
   opacity: 0.9;
+  margin-bottom: 25px;
 }
 
 .charge_header {
@@ -129,6 +137,7 @@ body, html {
   border-radius: 50px;
   text-align: center;
   opacity: 0.9;
+  margin-bottom: 25px;
 }
 
 .note_header {
@@ -151,6 +160,7 @@ body, html {
   border-radius: 50px;
   text-align: center;
   opacity: 0.9;
+  margin-bottom: 25px;
 }
 
 .event_header {
@@ -174,6 +184,7 @@ body, html {
   border-radius: 50px;
   text-align: center;
   opacity: 0.9;
+  margin-bottom: 25px;
 }
 
 .user {
@@ -314,26 +325,31 @@ body, html {
 
 /*Forms*/
 .form-inputs {
-  width: 500px;
+  max-width: 900px;
+  max-height: 1100px;
+  background: #474747;
+  padding: 30px;
   font-family: 'Josefin Sans', sans-serif;
   color: #008CBA;
+  border-radius: 50px;
+  margin-bottom: 25px;
 }
 
 .form-actions {
   padding-left: 25px;
   font-family: 'Josefin Sans', sans-serif;
-  color: #474747;
+  color: #008CBA;
 }
 
 .form_header {
   text-align: center;
   font-family: 'Josefin Sans', sans-serif;
-  color: #474747;
+  color: #008CBA;
   font-size: 50px;
 }
 
 .link {
-  color: #474747;
+  color: #008CBA;
   font-family: 'Josefin Sans', sans-serif;
 }
 

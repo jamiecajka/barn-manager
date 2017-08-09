@@ -11,18 +11,6 @@ feature 'admin can add a new farrier' do
     fill_in 'Password', with: 'password'
     click_on 'Log In'
 
-    expect(page).to have_content('Owner Info')
-  end
-
-  scenario 'admin clicks on link Owner Info and are redireced to page with Add links' do
-    user = FactoryGirl.create(:user, email: 'test6@email.com')
-    visit root_path
-    click_link 'Sign In'
-    fill_in 'Email', with: 'test6@email.com'
-    fill_in 'Password', with: 'password'
-    click_on 'Log In'
-    click_on 'Owner Info'
-
     expect(page).to have_content('Add New Farrier')
   end
 
@@ -33,7 +21,6 @@ feature 'admin can add a new farrier' do
     fill_in 'Email', with: 'test5@email.com'
     fill_in 'Password', with: 'password'
     click_on 'Log In'
-    click_on 'Owner Info'
     click_on 'Add New Farrier'
 
     expect(page).to have_content('Add New Farrier')
@@ -46,7 +33,6 @@ feature 'admin can add a new farrier' do
     fill_in 'Email', with: 'test5@email.com'
     fill_in 'Password', with: 'password'
     click_on 'Log In'
-    click_on 'Owner Info'
     click_on 'Add New Farrier'
     fill_in 'Name', with: 'John Doe'
     fill_in 'Phone Number', with: '123-456-7890'

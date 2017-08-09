@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  before_action :authorize_user, except: [:index, :show]
+  before_action :authorize_user, except: [:show]
   def show
     @note = Note.find(params[:id])
     @horse = @note.horse

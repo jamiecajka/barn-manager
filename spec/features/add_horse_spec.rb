@@ -10,18 +10,6 @@ feature 'admin can add a new horse' do
     fill_in 'Password', with: 'password'
     click_on 'Log In'
 
-    expect(page).to have_content('Owner Info')
-  end
-
-  scenario 'admin clicks on link Owner Info and are redireced to page with Add links' do
-    user = FactoryGirl.create(:user, email: 'test6@email.com')
-    visit root_path
-    click_link 'Sign In'
-    fill_in 'Email', with: 'test6@email.com'
-    fill_in 'Password', with: 'password'
-    click_on 'Log In'
-    click_on 'Owner Info'
-
     expect(page).to have_content('Add New Horse')
   end
 
@@ -32,7 +20,6 @@ feature 'admin can add a new horse' do
     fill_in 'Email', with: 'test3@email.com'
     fill_in 'Password', with: 'password'
     click_on 'Log In'
-    click_on 'Owner Info'
     click_on 'Add New Horse'
 
     expect(page).to have_content('Add New Horse')
@@ -47,7 +34,6 @@ feature 'admin can add a new horse' do
     fill_in 'Email', with: 'test3@email.com'
     fill_in 'Password', with: 'password'
     click_on 'Log In'
-    click_on 'Owner Info'
     click_on 'Add New Horse'
     fill_in 'Registered Name', with: 'RA Kasanova'
     fill_in 'Barn Name', with: 'Kas'

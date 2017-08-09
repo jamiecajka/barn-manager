@@ -1,4 +1,3 @@
-<h1 class="form_header">Add New Horse</h1>
 <%= simple_form_for @horse do |f| %>
 <% if @horse.errors.any? %>
 <div id="error_explanation-horse">
@@ -14,23 +13,28 @@
 <div class="row">
   <div class="small-6 large-centered columns">
     <div class="form-inputs">
-      <%= f.input :registered_name, label: 'Registered Name' %>
-      <%= f.input :barn_name, label: 'Barn Name', required: true %>
-      <%= f.input :breed, label: 'Breed', required: true %>
-      <%= f.input :discipline, label: 'Discipline' %>
-      <%= f.label :user_id, 'Owner' %>
+      <h1 class="form_header">Add New Horse</h1>
+      <%= f.label :registered_name, 'Registered Name', class: 'form-actions' %>
+      <%= f.input :registered_name %>
+      <%= f.label :barn_name, 'Barn Name', class: 'form-actions' %>
+      <%= f.input :barn_name, required: true %>
+      <%= f.label :breed, 'Breed', class: 'form-actions' %>
+      <%= f.input :breed, required: true %>
+      <%= f.label :discipline, 'Discipline', class: 'form-actions' %>
+      <%= f.input :discipline %>
+      <%= f.label :user_id, 'Owner', class: 'form-actions' %>
       <%= f.select :user_id, User.all.collect { |p| [p.name, p.id] } %>
-      <%= f.label :veterinarian_id, 'Veterinarian' %>
+      <%= f.label :veterinarian_id, 'Veterinarian', class: 'form-actions' %>
       <%= f.select :veterinarian_id, Veterinarian.all.collect { |v| [v.name, v.id] } %>
-      <%= f.label :farrier_id, 'Farrier' %>
+      <%= f.label :farrier_id, 'Farrier', class: 'form-actions' %>
       <%= f.select :farrier_id, Farrier.all.collect { |f| [f.name, f.id] } %>
-      <%= f.input :picture, type: :file %>
+      <%= f.input :picture, type: :file, class: 'form-actions' %>
+      <div class="form-actions">
+        <%= f.button :submit, 'Submit' %>
+        <p><%= link_to "Back", :back, class: 'link' %> <br />
+          <%= link_to 'Home', user_path(current_user) %></p>
+        </div>
+        <% end %>
     </div>
-    <div class="form-actions">
-      <%= f.button :submit, 'Submit' %>
-      <p><%= link_to "Back", :back, class: 'link' %> <br />
-         <%= link_to 'Home', user_path(current_user), style: 'color: #474747;' %></p>
-    </div>
-    <% end %>
   </div>
 </div>

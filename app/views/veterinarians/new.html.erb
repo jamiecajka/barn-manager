@@ -1,5 +1,4 @@
 <% if user_signed_in? && current_user.admin? %>
-  <h1 class="form_header">Add New Veterinarian</h1>
   <%= simple_form_for @veterinarian do |f| %>
   <% if @veterinarian.errors.any? %>
   <div id="error_explanation-veterinarian">
@@ -15,17 +14,24 @@
   <div class="row">
     <div class="small-6 large-centered columns">
       <div class="form-inputs">
-        <%= f.input :name, label: 'Name' %>
-        <%= f.input :phone_number, label: 'Phone Number' %>
-        <%= f.input :address, label: 'Address' %>
-        <%= f.input :city, label: 'City' %>
-        <%= f.input :state, label: 'State' %>
-        <%= f.input :zip_code, label: 'Zip Code' %>
-      </div>
-      <div class='form-actions'>
-        <%= f.button :submit, 'Submit' %>
-        <p><%= link_to "Back", :back, class: 'link' %> <br />
-           <%= link_to 'Home', user_path(current_user), style: 'color: #474747;' %></p>
+        <h1 class="form_header">Add New Veterinarian</h1>
+        <%= f.label :name, 'Name', class: 'form-actions' %>
+        <%= f.input :name %>
+        <%= f.label :phone_number, 'Phone Number', class: 'form-actions' %>
+        <%= f.input :phone_number %>
+        <%= f.label :address, 'Address', class: 'form-actions' %>
+        <%= f.input :address %>
+        <%= f.label :city, 'City', class: 'form-actions' %>
+        <%= f.input :city %>
+        <%= f.label :state, 'State', class: 'form-actions' %>
+        <%= f.input :state %>
+        <%= f.label :zip_code, 'Zip Code', class: 'form-actions' %>
+        <%= f.input :zip_code %>
+        <div class='form-actions'>
+          <%= f.button :submit, 'Submit' %>
+          <p><%= link_to "Back", :back, class: 'link' %> <br />
+            <%= link_to 'Home', user_path(current_user) %></p>
+          </div>
       </div>
       <% end %>
     </div>
