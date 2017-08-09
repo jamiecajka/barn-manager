@@ -9,42 +9,35 @@
   </head>
 
   <body>
-    <% if action_name === 'show' || action_name === 'index' %>
-    <div class="fixed">
-      <nav class="top-bar" data-topbar role="navigate", style='background: #474747; height: 75px;'>
-        <ul class="title-area", style='background: #474747;'>
-          <li class="name">
-            <h1 class='site_name', style='font-size: 45px; padding: 10px;'> Seagull Performance Horses</h1>
-          </li>
-        </ul>
-        <section class="top-bar-section">
-          <ul class="right">
-            <% if user_signed_in? %>
-              <li class='word'>
-                <%= link_to "Edit Account", edit_user_registration_path, style: "background: #474747; color: #008CBA; font-family: 'Josefin Sans', sans-serif; font-size: 20px; padding-top: 10px;" %>
-              </li>
-              <li>
-                <%= link_to "Sign Out", destroy_user_session_path, method: :delete, style: "background: #474747; color: #008CBA; font-family: 'Josefin Sans', sans-serif; font-size: 20px; padding-top: 10px;" %>
-              </li>
-              <li>
-                <%= link_to "Home", user_path(current_user), style: "background: #474747; color: #008CBA; font-family: 'Josefin Sans', sans-serif; font-size: 20px; padding-top: 10px;" %>
-              </li>
-              <li>
-                <%= link_to "Back", :back, style: "background: #474747; color: #008CBA; font-family: 'Josefin Sans', sans-serif; font-size: 20px; padding-top: 10px;" %>
-              </li>
-            <% else %>
-              <li>
-                <%= link_to "Sign In", new_user_session_path, style: "background: #474747; color: #008CBA; font-family: 'Josefin Sans', sans-serif; font-size: 20px; padding-top: 10px;" %>
-              </li>
-              <li>
-                <%= link_to "Home", user_path(current_user), style: "background: #474747; color: #008CBA; font-family: 'Josefin Sans', sans-serif; font-size: 20px; padding-top: 10px;" %>
-              </li>
+      <header>
+        <div class="large-9 large-centered columns">
+        <div class='page-head'>
+          <h1 class='barn_name'>Seagull Performance Horses</h1>
+        <%= image_tag 'horses.jpg', {class: 'header-picture'} %>
+        <% if user_signed_in? %>
+        <div class="row">
+          <div class="medium-3 columns">
+            <p><%= link_to "Edit Account", edit_user_registration_path, {class: 'word'} %></p>
+          </div>
+          <div class="medium-3 columns">
+            <p><%= link_to "Sign Out", destroy_user_session_path, {method: :delete, class: 'word'} %></p>
+          </div>
+          <div class="medium-3 columns">
+            <p><%= link_to "Home", user_path(current_user), {class: 'word'} %></p>
+          </div>
+        <div class="medium-3 columns">
+          <p><%= link_to "Back", :back, {class: 'word'} %></p>
+        </div>
+      </div>
+        <% else %>
+        <p><%= link_to "Home", root_path, {class: 'word'} %></p>
+      </div>
+      </header>
             <% end %>
           </ul>
         </div>
       </div>
     </div>
-    <% end %>
     <%= notice %>
     <%= alert %>
     <%= yield %>

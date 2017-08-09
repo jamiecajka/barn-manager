@@ -1,32 +1,35 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Satisfy');
 
-body {
-  background: #8DA95E !important;
+body, html {
+    background-image: url("green_wall.jpg") !important;
+    background: #476B22;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
 }
 
-.site_name {
-  color: #008CBA;
-  font-family: 'Satisfy', cursive;
-}
-
-.title-area {
-  padding: 7px 15px 5px 5px;
-}
-
-.top-bar-section{
-  padding: 5px 15px 5px 15px;
-}
-
-/*Home Page*/
-img {
-  padding-top: 100px;
-  padding-bottom: 20px;
-}
-
-.header {
+.word {
   background: #474747;
-  height: 120px;
+  color: #008CBA;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 20px;
+  margin: 0px 25px 0px 5px;
+  padding: 8px;
+  border: 1px solid #008CBA;
+}
+
+.header-picture {
+  height: 300px;
+  margin-bottom: 10px;
+}
+
+.page-head {
+  background: #474747;
+  height:450px;
+  width: 878px;
   text-align: center;
+  margin-bottom: 25px;
+  margin-top: 10px;
 }
 
 .barn_name {
@@ -35,6 +38,7 @@ img {
   font-size: 60px;
 }
 
+/*Home Page*/
 .card {
   padding-top: 20px;
   padding-left: 10px;
@@ -46,6 +50,7 @@ img {
   padding-bottom: 20px;
   border-radius: 25px;
   margin-bottom: 25px;
+  opacity: 0.9;
 }
 
 /*Farrier Show*/
@@ -57,6 +62,7 @@ img {
   min-height: 250px;
   border-radius: 50px;
   text-align: center;
+  opacity: 0.9;
 }
 
 .farrier_header {
@@ -78,6 +84,7 @@ img {
   min-height: 250px;
   border-radius: 50px;
   text-align: center;
+  opacity: 0.9;
 }
 
 .veterinarian_header {
@@ -99,6 +106,7 @@ img {
   min-height: 250px;
   border-radius: 50px;
   text-align: center;
+  opacity: 0.9;
 }
 
 .charge_header {
@@ -120,6 +128,7 @@ img {
   min-height: 250px;
   border-radius: 50px;
   text-align: center;
+  opacity: 0.9;
 }
 
 .note_header {
@@ -141,6 +150,7 @@ img {
   min-height: 250px;
   border-radius: 50px;
   text-align: center;
+  opacity: 0.9;
 }
 
 .event_header {
@@ -163,6 +173,7 @@ img {
   color: #008CBA;
   border-radius: 50px;
   text-align: center;
+  opacity: 0.9;
 }
 
 .user {
@@ -181,6 +192,7 @@ img {
   text-align: center;
   height: 250px;
   overflow-y: auto;
+  opacity: 0.9;
 }
 
 .horse {
@@ -201,6 +213,7 @@ img {
   background: #474747;
   border-radius: 50px;
   text-align: center;
+  opacity: 0.9;
 }
 
 /*Horse Show*/
@@ -209,6 +222,7 @@ img {
   background: #474747;
   height: 425px;
   border-radius: 50px;
+  opacity: 0.9;
 }
 
 .registered_name {
@@ -245,6 +259,7 @@ img {
   border-radius: 50px;
   height: 300px;
   overflow-y: auto;
+  opacity: 0.9;
 }
 
 .events {
@@ -257,6 +272,7 @@ img {
   border-radius: 50px;
   height: 300px;
   overflow-y: auto;
+  opacity: 0.9;
 }
 
 .charges_head {
@@ -287,6 +303,7 @@ img {
   overflow-y: auto;
   margin-top: 25px;
   margin-bottom: 25px;
+  opacity: 0.9;
 }
 
 .notes_head {
