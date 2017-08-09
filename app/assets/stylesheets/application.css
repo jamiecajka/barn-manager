@@ -14,3 +14,4 @@
  *= require_tree .
  *= require_self
  */
+ config.serve_static_assets = true
