@@ -1,5 +1,4 @@
 <br></br>
-<h1 class="form_header">Edit Charge</h1>
 <%= simple_form_for @charge do |f| %>
 <% if @charge.errors.any? %>
 <div id="error_explanation-charge">
@@ -15,22 +14,23 @@
 <div class="row">
   <div class="small-6 large-centered columns">
     <div class="form-inputs">
-      <%= f.label :horse_id, 'Horse' %>
+      <h1 class="form_header">Edit Charge</h1>
+      <%= f.label :horse_id, 'Horse', class: 'form-actions' %>
       <%= f.select :horse_id, Horse.all.collect { |h| [h.barn_name, h.id] } %>
-      <%= f.label :date, 'Due Date' %>
+      <%= f.label :date, 'Due Date', class: 'form-actions' %>
       <%= f.date_select('date',
           options = { start_year: 2017, order: [:month, :day, :year]},
           html_options = { class: 'select-date'})  %>
-      <%= f.label :amount, 'Amount' %>
+      <%= f.label :amount, 'Amount', class: 'form-actions' %>
       <%= f.input :amount %>
-      <%= f.label :description, 'Description' %>
+      <%= f.label :description, 'Description', class: 'form-actions' %>
       <%= f.input :description %>
+      <div class="form-actions">
+        <%= f.button :submit, 'Update' %>
+        <p><%= link_to "Delete Charge", charge_path(@charge.id), data: { confirm: "Are you sure?" }, method: :delete %><br />
+          <%= link_to "Back", :back, class: 'link' %></p>
+        </div>
     </div>
   </div>
-    <div class="form-actions">
-      <%= f.button :submit, 'Update' %>
-      <p><%= link_to "Delete Charge", charge_path(@charge.id), data: { confirm: "Are you sure?" }, method: :delete %>
-         <%= link_to "Back", :back, class: 'link' %></p>
-    </div>
     <% end %>
   </div>

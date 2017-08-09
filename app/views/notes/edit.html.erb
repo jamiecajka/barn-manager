@@ -1,5 +1,4 @@
 <br></br>
-<h1 class="form_header">Edit Note</h1>
 <%= simple_form_for @note do |f| %>
 <% if @note.errors.any? %>
 <div id="error_explanation-note">
@@ -15,16 +14,17 @@
 <div class="row">
   <div class="small-6 large-centered columns">
     <div class="form-inputs">
-      <%= f.label :horse_id, 'Horse' %>
+      <h1 class="form_header">Edit Note</h1>
+      <%= f.label :horse_id, 'Horse', class: 'form-actions' %>
       <%= f.select :horse_id, Horse.all.collect { |h| [h.barn_name, h.id] } %>
-      <%= f.label :text, 'Enter Note' %>
+      <%= f.label :text, 'Enter Note', class: 'form-actions' %>
       <%= f.text_area :text %>
+      <div class="form-actions">
+        <%= f.button :submit, 'Update' %>
+        <p><%= link_to "Delete Note", note_path(@note.id), data: { confirm: "Are you sure?" }, method: :delete %> <br />
+          <%= link_to "Back", :back, class: 'link' %></p>
+        </div>
     </div>
   </div>
-    <div class="form-actions">
-      <%= f.button :submit, 'Update' %>
-      <p><%= link_to "Delete Note", note_path(@note.id), data: { confirm: "Are you sure?" }, method: :delete, style: 'color: #474747;' %> <br />
-        <%= link_to "Back", :back, class: 'link' %></p>
-    </div>
     <% end %>
   </div>

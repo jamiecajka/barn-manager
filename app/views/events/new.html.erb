@@ -1,5 +1,4 @@
 <br></br>
-<h1 class="form_header">Add New Event</h1>
 <%= simple_form_for @event do |f| %>
 <% if @event.errors.any? %>
 <div id="error_explanation-event">
@@ -15,24 +14,25 @@
 <div class="row">
   <div class="small-6 large-centered columns">
     <div class="form-inputs">
-      <%= f.label :horse_id, 'Horse' %>
+      <h1 class="form_header">Add New Event</h1>
+      <%= f.label :horse_id, 'Horse', class: 'form-actions' %>
       <%= f.select :horse_id, Horse.all.collect { |h| [h.barn_name, h.id] } %>
-      <%= f.label :date, 'Date' %>
+      <%= f.label :date, 'Date', class: 'form-actions' %>
       <%= f.date_select('date',
           options = { start_year: 2017, order: [:month, :day, :year]},
           html_options = { class: 'select-date'})  %>
-          <%= f.label :time, 'Time' %>
+          <%= f.label :time, 'Time', class: 'form-actions' %>
           <%= f.input :time %>
-      <%= f.label :description, 'Description' %>
+      <%= f.label :description, 'Description', class: 'form-actions' %>
       <%= f.input :description %>
-      <%= f.label :notes, 'Additional Info' %>
+      <%= f.label :notes, 'Additional Info', class: 'form-actions' %>
       <%= f.text_area :notes %>
+      <div class="form-actions">
+        <%= f.button :submit, 'Submit' %>
+        <p><%= link_to "Back", :back, class: 'link' %> <br />
+          <%= link_to 'Home', user_path(current_user) %></p>
+        </div>
+        <% end %>
+      </div>
     </div>
-  </div>
-    <div class="form-actions">
-      <%= f.button :submit, 'Submit' %>
-      <p><%= link_to "Back", :back, class: 'link' %> <br />
-         <%= link_to 'Home', user_path(current_user), style: 'color: #474747;' %></p>
-    </div>
-    <% end %>
   </div>

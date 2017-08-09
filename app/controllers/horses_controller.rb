@@ -1,5 +1,5 @@
 class HorsesController < ApplicationController
-  before_action :authorize_user, except: [:index, :show]
+  before_action :authorize_user, except: [:show]
   def show
     @horse = Horse.find(params[:id])
     @user = @horse.user
