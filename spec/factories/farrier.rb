@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :veterinarian do |f|
+  factory :farrier do |f|
     f.name { Faker::Name.name }
     f.phone_number { Faker::Internet.ip_v4_address }
     f.address { Faker::Address.street_address }

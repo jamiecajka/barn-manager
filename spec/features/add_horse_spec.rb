@@ -3,22 +3,22 @@ require 'rails_helper'
 
 feature 'admin can add a new horse' do
   scenario 'admin can see link to add a new horse when they login' do
-    user = FactoryGirl.create(:user, email: 'test3@email.com')
+    user = FactoryGirl.create(:user)
     visit root_path
     click_link 'Sign In'
-    fill_in 'Email', with: 'test3@email.com'
-    fill_in 'Password', with: 'password'
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
     click_on 'Log In'
 
     expect(page).to have_content('Add New Horse')
   end
 
   scenario 'admin clicks on link Add New Horse and is redirected to a form' do
-    user = FactoryGirl.create(:user, email: 'test3@email.com')
+    user = FactoryGirl.create(:user)
     visit root_path
     click_link 'Sign In'
-    fill_in 'Email', with: 'test3@email.com'
-    fill_in 'Password', with: 'password'
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
     click_on 'Log In'
     click_on 'Add New Horse'
 
@@ -27,21 +27,22 @@ feature 'admin can add a new horse' do
 
   scenario 'specifying valid and required information' do
     veterinarian = FactoryGirl.create(:veterinarian)
-    ferrier = FactoryGirl.create(:farrier)
-    user = FactoryGirl.create(:user, email: 'test3@email.com')
+    farrier = FactoryGirl.create(:farrier)
+    user = FactoryGirl.create(:user)
+    horse = FactoryGirl.create(:horse, user: user, veterinarian: veterinarian, farrier: farrier)
     visit root_path
     click_link 'Sign In'
-    fill_in 'Email', with: 'test3@email.com'
-    fill_in 'Password', with: 'password'
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
     click_on 'Log In'
     click_on 'Add New Horse'
-    fill_in 'Registered Name', with: 'RA Kasanova'
-    fill_in 'Barn Name', with: 'Kas'
-    fill_in 'Breed', with: 'Arabian'
-    fill_in 'Discipline', with: 'Western'
-    select 'Jamie Cajka', from: 'Owner'
-    select 'Dan Fischer', from: 'Veterinarian'
-    select 'Vernon Johns', from: "Farrier"
+    fill_in 'Registered Name', with: horse.registered_name
+    fill_in 'Barn Name', with: horse.barn_name
+    fill_in 'Breed', with: horse.breed
+    fill_in 'Discipline', with: horse.discipline
+    select user.name, from: 'Owner'
+    select veterinarian.name, from: 'Veterinarian'
+    select farrier.name, from: "Farrier"
     attach_file 'horse_picture', "#{Rails.root}/spec/support/images/photo.jpg"
     click_on 'Submit'
 
