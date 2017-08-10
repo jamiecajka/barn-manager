@@ -1,4 +1,4 @@
-<h1 class="form_header">Edit <%= @horse.barn_name %></h1>
+<div class='wrapper'>
 <%= simple_form_for @horse do |f| %>
 <% if @horse.errors.any? %>
 <div id="error_explanation-horse">
@@ -14,6 +14,7 @@
 <div class="row">
   <div class="small-6 large-centered columns">
     <div class="form-inputs">
+      <h1 class="form_header">Edit <%= @horse.barn_name %></h1>
       <%= f.input :registered_name, label: 'Registered Name' %>
       <%= f.input :barn_name, label: 'Barn Name', required: true, autofocus: true %>
       <%= f.input :breed, label: 'Breed', required: true, autofocus: true %>
@@ -25,12 +26,13 @@
       <%= f.label :farrier_id, 'Farrier' %>
       <%= f.select :farrier_id, Farrier.all.collect { |f| [f.name, f.id] }, autofocus: true %>
       <%= f.input :picture, type: :file %>
-    </div>
-    <div class="form-actions">
-      <%= f.button :submit, 'Update' %>
-      <p><%= link_to "Delete Horse", horse_path(@horse.id), data: { confirm: "Are you sure?" }, method: :delete, style: 'color: #474747;' %> <br />
-        <%= link_to "Back", :back, class: 'link' %></p>
+      <div class="form-actions">
+        <%= f.button :submit, 'Update' %>
+        <p><%= link_to "Delete Horse", horse_path(@horse.id), data: { confirm: "Are you sure?" }, method: :delete %> <br />
+          <%= link_to "Back", :back, class: 'link' %></p>
+        </div>
     </div>
     <% end %>
   </div>
+</div>
 </div>
