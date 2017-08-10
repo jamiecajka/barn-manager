@@ -7,6 +7,7 @@ end
 
 group :test do
   gem 'coveralls', require: false
+  gem 'database_cleaner'
 end
 
 gem 'pg', '~> 0.18'
@@ -33,12 +34,14 @@ end
 group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'factory_girl_rspec'
+  gem 'faker', github: 'stympy/faker'
   gem 'launchy', require: false
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.5'
   gem 'shoulda'
   gem 'valid_attribute'
-  gem 'database_cleaner'
+  gem 'rails-controller-testing'
 end
 
 group :production do
