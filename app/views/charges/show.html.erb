@@ -1,15 +1,17 @@
-<br></br>
-<div class="row">
-  <div class="small-6 large-centered columns">
-    <div class='charge_info'>
-      <h1 class='charge_header'>For: <%= @charge.horse.barn_name%><h1>
-        <h3 class='charge_data'>Amount Due: $<%= @charge.amount%></h3>
-        <h3 class='charge_data'>Due: <%= @charge.date.strftime("%B %d, %Y")%></h3>
-      <h3 class='charge_data'>Description: <%= @charge.description %></h3>
-      <% if current_user.admin? %>
-        <%= link_to 'Edit', edit_charge_path(params[:id]) %> <br />
-        <%= link_to 'Back to Horse', horse_path(@charge.horse_id) %>
-      <% end %>
+  <br></br>
+  <div class='wrapper'>
+  <div class="row">
+    <div class="small-6 large-centered columns">
+      <div class='charge_info'>
+        <h1 class='charge_header'>For: <%= @charge.horse.barn_name%><h1>
+          <h3 class='charge_data'>Amount Due: $<%= @charge.amount%></h3>
+          <h3 class='charge_data'>Due: <%= @charge.date.strftime("%B %d, %Y")%></h3>
+        <h3 class='charge_data'>Description: <%= @charge.description %></h3>
+        <% if current_user.admin? %>
+          <%= link_to 'Edit', edit_charge_path(params[:id]) %> <br />
+          <%= link_to 'Back to Horse', horse_path(@charge.horse_id) %>
+        <% end %>
+      </div>
     </div>
-  </div>
-</div
+  </div
+</div>

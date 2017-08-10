@@ -7,7 +7,7 @@ body, .wrapper {
     background-color: #123D06;
     background-attachment: scroll;
     background-position: center center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     /*opacity: 0.8;*/
 }
@@ -32,7 +32,7 @@ body, .wrapper {
   height:450px;
   width: 878px;
   text-align: center;
-  /*margin-bottom: 25px;*/
+  margin-bottom: 25px;
   margin-top: 20px;
   opacity: 0.9
 }
@@ -336,7 +336,7 @@ body, .wrapper {
 /*Forms*/
 .form-inputs {
   max-width: 900px;
-  max-height: 1100px;
+  max-height: 1200px;
   background: #474747;
   padding: 30px;
   font-family: 'Josefin Sans', sans-serif;
