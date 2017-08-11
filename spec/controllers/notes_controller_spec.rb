@@ -1,27 +1,27 @@
 require 'rails_helper'
 
-RSpec.describe ChargesController, type: :controller do
+RSpec.describe NotesController, type: :controller do
   let!(:user) { FactoryGirl.create(:user) }
   let!(:veterinarian) { FactoryGirl.create(:veterinarian) }
   let!(:farrier) { FactoryGirl.create(:farrier) }
   let!(:horse) { FactoryGirl.create(:horse, user: user, veterinarian: veterinarian, farrier: farrier) }
-  let!(:charge) { FactoryGirl.create(:charge, date: 20170901, horse: horse)}
+  let!(:note) { FactoryGirl.create(:note, horse: horse)}
 
   describe 'GET #show' do
     context 'when user is logged in as admin' do
       with :user
       before do
         sign_in user
-        get :show, params: { id: charge.id}
+        get :show, params: { id: note.id}
       end
-      it 'assigns the requested charge to @charge' do
-        get :show, params: { id: charge.id }
-        assigns(:charge).should eq(charge)
+      it 'assigns the requested note to @note' do
+        get :show, params: { id: note.id }
+        assigns(:note).should eq(note)
       end
     end
 
       it "renders the #show view" do
-        get :show, params: { id: charge.id}
+        get :show, params: { id: note.id}
         response.should render_template :show
       end
     end
@@ -34,12 +34,12 @@ RSpec.describe ChargesController, type: :controller do
         get :new
       end
 
-        it "charge should be new" do
-        Charge.stub(:new).and_return(charge)
+        it "note should be new" do
+        Note.stub(:new).and_return(note)
 
         get :new
 
-        assigns(:charge).should == charge
+        assigns(:note).should == note
       end
     end
   end
@@ -47,18 +47,18 @@ RSpec.describe ChargesController, type: :controller do
     describe 'DELETE destroy' do
     before :each do
       sign_in user
-      @charge = :charge
+      @note = :note
     end
 
-    it "deletes the charge" do
+    it "deletes the note" do
       expect{
-        delete :destroy, params: { id: charge.id }
-      }.to change(Charge,:count).by(-1)
+        delete :destroy, params: { id: note.id }
+      }.to change(Note,:count).by(-1)
     end
 
-    it "redirects to charges#index" do
-      delete :destroy, params: { id: charge.id }
-      response.should redirect_to new_charge_path
+    it "redirects to notes#index" do
+      delete :destroy, params: { id: note.id }
+      response.should redirect_to new_note_path
     end
   end
 end

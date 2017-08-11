@@ -59,4 +59,22 @@ RSpec.describe VeterinariansController, type: :controller do
         end
       end
     end
+
+    describe 'DELETE destroy' do
+    before :each do
+      sign_in user
+      @veterinarian = :veterinarian
+    end
+
+    it "deletes the veterinarian" do
+      expect{
+        delete :destroy, params: { id: veterinarian.id }
+      }.to change(Veterinarian,:count).by(-1)
+    end
+
+    it "redirects to veterinarians#index" do
+      delete :destroy, params: { id: veterinarian.id }
+      response.should redirect_to new_veterinarian_path
+    end
   end
+end

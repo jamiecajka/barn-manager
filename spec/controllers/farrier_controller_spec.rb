@@ -59,4 +59,22 @@ RSpec.describe FarriersController, type: :controller do
         end
       end
     end
+
+      describe 'DELETE destroy' do
+      before :each do
+        sign_in user
+        @farrier = :farrier
+      end
+
+      it "deletes the farrier" do
+        expect{
+          delete :destroy, params: { id: farrier.id }
+        }.to change(Farrier,:count).by(-1)
+      end
+
+      it "redirects to farriers#index" do
+        delete :destroy, params: { id: farrier.id }
+        response.should redirect_to new_farrier_path
+      end
+    end
   end

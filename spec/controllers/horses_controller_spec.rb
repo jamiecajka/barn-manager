@@ -42,4 +42,22 @@ RSpec.describe HorsesController, type: :controller do
         end
       end
     end
+
+      describe 'DELETE destroy' do
+      before :each do
+        sign_in user
+        @horse = :horse
+      end
+
+      it "deletes the horse" do
+        expect{
+          delete :destroy, params: { id: horse.id }
+        }.to change(Horse,:count).by(-1)
+      end
+
+      it "redirects to horses#index" do
+        delete :destroy, params: { id: horse.id }
+        response.should redirect_to new_horse_path
+      end
+    end
   end
