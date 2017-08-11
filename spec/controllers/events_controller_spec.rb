@@ -18,4 +18,40 @@ RSpec.describe EventsController, type: :controller do
       get :show, params: { id: event.id}
       response.should render_template :show
     end
+
+    describe "GET #new" do
+      context 'when user is logged in as admin' do
+        with :user
+        before do
+          sign_in user
+          get :new
+        end
+
+          it "event should be new" do
+          Event.stub(:new).and_return(event)
+
+          get :new
+
+          assigns(:event).should == event
+        end
+      end
+    end
+
+      describe 'DELETE destroy' do
+      before :each do
+        sign_in user
+        @event = :event
+      end
+
+      it "deletes the event" do
+        expect{
+          delete :destroy, params: { id: event.id }
+        }.to change(Event,:count).by(-1)
+      end
+
+      it "redirects to events#index" do
+        delete :destroy, params: { id: event.id }
+        response.should redirect_to new_event_path
+      end
+    end
   end
