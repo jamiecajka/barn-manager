@@ -48,7 +48,64 @@ User.create(
   role: 'admin'
 )
 
+taco = Horse.create(
+  registered_name: 'Ima Dancing Taco',
+  barn_name: 'Taco',
+  breed: 'Quarter Horse',
+  discipline: 'Western',
+  user_id: 1,
+  veterinarian_id: 1,
+  farrier_id: 1
+  )
+  taco.picture = Rails.root.join('db/images/Taco.jpg').open
+  taco.save!
+
+  noah = Horse.create(
+    registered_name: 'MA Nobelesse',
+    barn_name: 'Noah',
+    breed: 'Arabian',
+    discipline: 'English',
+    user_id: 1,
+    veterinarian_id: 1,
+    farrier_id: 1
+    )
+    noah.picture = Rails.root.join('db/images/Noah.jpg').open
+    noah.save!
+
+    kas = Horse.create(
+      registered_name: 'RA Kasanova',
+      barn_name: 'Kas',
+      breed: 'Arabian',
+      discipline: 'Western',
+      user_id: 1,
+      veterinarian_id: 1,
+      farrier_id: 1
+      )
+      kas.picture = Rails.root.join('db/images/Kas.jpg').open
+      kas.save!
 
 10.times do
-  Note.create(horse_id: rand(1..2), text: Faker::Hipster.paragraph)
+  Note.create(
+  horse_id: rand(1..3),
+  text: Faker::Hipster.paragraph
+  )
+end
+
+6.times do
+  Event.create(
+    horse_id: rand(1..3),
+    date: 20170901,
+    time: '12:00 pm',
+    description: Faker::Lovecraft.sentence(3, 1),
+    notes: Faker::Hacker.say_something_smart
+  )
+end
+
+10.times do
+  Charge.create(
+    horse_id: rand(1..3),
+    date: 20170901,
+    description: Faker::ChuckNorris.fact,
+    amount: Faker::Number.decimal(2)
+  )
 end
